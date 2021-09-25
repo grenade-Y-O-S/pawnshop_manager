@@ -24,7 +24,6 @@
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
-| pawn_card_id | integer    | null: false                    |
 | item_name    | string     | null: false                    |
 | item_price   | integer    | null: false                    |
 | item_detail  | text       | null: false                    |
