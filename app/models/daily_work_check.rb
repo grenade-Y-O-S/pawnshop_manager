@@ -1,0 +1,2 @@
+class DailyWorkCheck < ApplicationRecord
+end
