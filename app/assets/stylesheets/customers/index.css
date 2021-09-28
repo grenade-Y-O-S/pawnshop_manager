@@ -1,0 +1,38 @@
+a {
+  text-decoration: none;
+}
+
+.main {
+  background: lightgreen;
+  height: 100vh;
+}
+
+.title{
+  font-size: 50px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.button_lines{
+  display: flex;
+  justify-content: center;
+}
+
+.buttons{
+  border: 1px solid white;
+  background: black;
+  text-align: center;
+  font-size: 40px;
+  padding: 20px 0px;
+  color: white;
+}
+
+.first_line_button, .second_line_button{
+  width: 200px;
+  margin: 30px 50px;
+}
+
+.third_line_button{
+  width: 300px;
+  margin: 30px 30px;
+}
