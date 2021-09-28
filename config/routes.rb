@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root to: 'customers#index'
 
   Rails.application.routes.draw do
-    resources :customers, only: [:index]
+    resources :customers, only: [:index, :select]
+    resources :pawns, only: [:index]
   end
 
 end
