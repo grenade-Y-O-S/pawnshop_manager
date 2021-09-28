@@ -1,37 +1,69 @@
 <div class='main'>
   <div class='title-contents'>
-    <h2 class='title'>
+    <div class='title'>
       PawnshopManager
-    </h2>
-  </div>
-  <div class='first_line'>
-    <div class='new_pawn_button'>
-      入質
-    </div>
-    <div class='interest_button'>
-      利息
-    </div>
-    <div class='purchase_button'>
-      買取
     </div>
   </div>
-  <div class='second_line'>
-    <div class='pawn_return_button'>
-      質返還
+  <div class='first_line button_lines'>
+    <div class='first_line_button'>
+      <%= link_to '#' do %>
+        <div class='buttons'>
+          入質
+        </div>
+      <% end %>
     </div>
-    <div class='pawn_forfeite_button'>
-      質流れ
+    <div class='first_line_button'>
+      <%= link_to '#' do %>
+        <div class='buttons'>
+          利息
+        </div>
+      <% end %>
+    </div>
+    <div class='first_line_button'>
+      <%= link_to '#' do %>
+        <div class='buttons'>
+          買取
+        </div>
+      <% end %>
     </div>
   </div>
-  <div class='third_line'>
-    <div class='gold_price_button'>
-      金相場入力
+  <div class='second_line button_lines'>
+    <div class='second_line_button'>
+      <%= link_to '#' do %>
+        <div class='buttons'>
+          質返還
+        </div>
+      <% end %>
     </div>
-    <div class='data_search_button'>
+    <div class='second_line_button'>
+      <%= link_to '#' do %>
+        <div class='buttons'>
+          質流れ
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class='third_line button_lines'>
+    <div class='third_line_button'>
+      <%= link_to '#' do %>
+        <div class='buttons'>
+          金相場入力
+        </div>
+      <% end %>
+    </div>
+    <div class='third_line_button'>
+      <%= link_to '#' do %>
+        <div class='buttons'>
       データ検索
+        </div>
+      <% end %>
     </div>
-    <div class='setting_change_button'>
+    <div class='third_line_button'>
+      <%= link_to '#' do %>
+        <div class='buttons'>
       設定変更
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
