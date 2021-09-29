@@ -14,13 +14,17 @@
 }
 
 .kanji_last_name{
-  margin-left: 100px;
+  margin-left: 70px;
 }
 
 .kana_last_name{
-  margin-left: 60px;
+  margin-left: 30px;
 }
 
 .job_part{
   margin-left: 20px;
+}
+
+.register-btn{
+  margin-left: 50px;
 }

@@ -1,9 +1,10 @@
-.pawn_main {
+.pawn_main{
   background: lightskyblue;
-  height: 100vh;
 }
 
 .pawn_button{
   width: 400px;
   margin: 50px calc(50vw - 200px);
+  font-size: 40px;
+  padding: 20px 0px;
 }
