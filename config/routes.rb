@@ -5,9 +5,8 @@ Rails.application.routes.draw do
   Rails.application.routes.draw do
     resources :customers, only: [:index, :new, :create]
 #    collection do
-#      get 'select'
+#      post ''
 #    end
     resources :pawns, only: [:index]
   end
-
 end

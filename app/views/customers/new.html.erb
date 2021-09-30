@@ -7,14 +7,14 @@
 
   <div class='button_lines'>
     <div class='new_customer_btn'>
-      <%= link_to pawns_path do %>
+      <%= link_to pawns_path, data: { confirm: '前のページに戻っていいですか?' } do %>
         <div class='buttons'>
           前のページへ戻る
         </div>
       <% end %>
     </div>
     <div class='new_customer_btn'>
-      <%= link_to root_path do %>
+      <%= link_to root_path, data: { confirm: 'トップページに戻っていいですか?' } do %>
         <div class='buttons'>
           トップへ戻る
         </div>
