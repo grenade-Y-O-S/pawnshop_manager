@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    attributes:
+      customer:
+        first_name: 姓(漢字)
+        last_name: 名(漢字)
+        first_name_kana: 姓(カタカナ)
+        last_name_kana: 名(カタカナ)
+        address: 住所
+        birth_date: 生年月日
+        phone_number: 電話番号
+        job: 職業
+        remarks: 備考
+      pawn:
+        item_name: 品物名
+        

@@ -1,5 +1,8 @@
 <div class='form_layout'>
   <%= form_with model: @customer, url: customers_path, local: true do |f| %>
+    <div class='error_messages'>
+      <%= render 'layouts/error_messages', model: f.object %>
+    </div>
     <div class='form_layput_lines'>
       <div class='kanji_first_name'>
         <div class='form_label_text'>

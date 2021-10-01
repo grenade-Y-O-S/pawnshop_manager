@@ -28,3 +28,7 @@
 .register-btn{
   margin-left: 50px;
 }
+
+.error_messages{
+  font-size: 16px;
+}
