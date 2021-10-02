@@ -3,6 +3,7 @@ class PawnsController < ApplicationController
   end
 
   def new
+#    redirect_to root_path if @customer == nil
     @pawn = Pawn.new
   end
 

@@ -2,11 +2,12 @@
   <div class='title'>
     質情報を入力してください
   </div>
-  <div class='new_pawn_btn'>
+
+  <%= render partial: "shared/pawn-form" , locals: { pawn: @pawn } %>
+
     <%= link_to root_path, data: { confirm: 'トップページに戻っていいですか?' } do %>
-      <div class='buttons'>
+      <div class='buttons move_btn'>
         トップへ戻る
       </div>
     <% end %>
-  </div>
 </body>
