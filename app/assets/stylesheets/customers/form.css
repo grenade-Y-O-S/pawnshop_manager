@@ -1,6 +1,8 @@
 .form_layout{
-  margin: 30px 0px 0px 40vw;
+  margin: 30px 0px 0px 30px;
   font-size: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .form_layput_lines{

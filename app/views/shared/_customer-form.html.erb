@@ -1,4 +1,5 @@
 <div class='form_layout'>
+  <div class='second_frame'>
   <%= form_with model: @customer, url: customers_path, local: true do |f| %>
     <div class='error_messages'>
       <%= render 'layouts/error_messages', model: f.object %>
@@ -99,4 +100,5 @@
       <%= f.submit "登録" ,class:"register-btn", data: { confirm: 'この情報で登録していいですか?' } %>
     </div>
   <% end %>
+  </div>
 </div>

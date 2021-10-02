@@ -12,4 +12,13 @@ class Customer < ApplicationRecord
     validates :birth_date
     validates :job
   end
+
+  def self.search(search)
+    if search != ""
+      Customer.where('text LIKE(?)', "%#{search}%")
+    else
+      Customer.all
+    end
+  end
+
 end
