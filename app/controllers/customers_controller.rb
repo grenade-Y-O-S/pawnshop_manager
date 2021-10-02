@@ -1,5 +1,4 @@
 class CustomersController < ApplicationController
-
   def index
   end
 
@@ -10,7 +9,7 @@ class CustomersController < ApplicationController
   def create
     @customer = Customer.new(customer_params)
     if @customer.save
-      redirect_to root_path
+      redirect_to new_pawn_path(@customer.id)
     else
       render new_customer_path
     end

@@ -8,6 +8,6 @@ Rails.application.routes.draw do
         post 'search'
       end
     end
-    resources :pawns, only: [:index]
+    resources :pawns, only: [:index, :new, :create]
   end
 end
