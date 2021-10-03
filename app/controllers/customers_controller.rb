@@ -15,8 +15,14 @@ class CustomersController < ApplicationController
     end
   end
 
+  def input
+  end
+
   def search
-    @customer = Customer.search(params[:keyword])
+    @column = params[:column]
+    word = params[:word]
+    @customer = Customer.where("#{column} LIKE?","#{word}%")
+    redirect_to search_customers_path
   end
 
 private

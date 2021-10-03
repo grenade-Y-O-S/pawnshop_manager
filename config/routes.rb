@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   Rails.application.routes.draw do
     resources :customers, only: [:index, :new, :create] do
       collection do
-        post 'search'
+        get 'input'
+        get 'search'
       end
     end
     resources :pawns, only: [:index, :new, :create]
