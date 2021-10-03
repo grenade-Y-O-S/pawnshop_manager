@@ -1,14 +1,14 @@
 <div class='form_layout'>
   <div class='second_frame'>
     <div class="search-form">
-      <%= form_with(scope: :search, url: customers_path, method: :get, local: true) do |f| %>
+      <%= form_with(scope: :search, url: search_customers_path, method: :get, local: true) do |f| %>
         <div class="field">
           <%= select_tag 'column' ,options_for_select([['姓(漢字)', 'first_name'], ['姓(カタカナ)', 'first_name_kana'], ['質番号', 'id']]) %>
           <%= text_field_tag (:word) %>
           <%# f.text_field :name, value: @search_params[:name] %>
         </div>
         <div class='register-btn'>
-          <%= f.submit "検索" ,class:"register-btn", data: { confirm: 'この条件で検索していいですか?' } %>
+          <%= f.submit "検索" ,class:"register-btn", url: search_customers_path, data: { confirm: 'この条件で検索していいですか?' } %>
         </div>
       <% end %>
     </div>

@@ -13,11 +13,11 @@ class Customer < ApplicationRecord
     validates :job
   end
 
-  def self.search(column, search)
-    if search != ""
-      Customer.where('#{column} LIKE(?)', "%#{search}%")
+  def self.search(column, word)
+    if word != ""
+      @customer = Customer.where("#{column} LIKE?","#{word}%")
     else
-      Customer.all
+      @customer = nil
     end
   end
 

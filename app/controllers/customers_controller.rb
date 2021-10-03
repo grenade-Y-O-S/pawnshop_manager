@@ -21,8 +21,7 @@ class CustomersController < ApplicationController
   def search
     @column = params[:column]
     word = params[:word]
-    @customer = Customer.where("#{column} LIKE?","#{word}%")
-    redirect_to search_customers_path
+    @customer = Customer.search(@column, word)
   end
 
 private
