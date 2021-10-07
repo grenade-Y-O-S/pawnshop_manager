@@ -1,6 +1,6 @@
 <div class='form_layout'>
   <div class='second_frame'>
-    <%= form_with model: @pawn, url: pawns_path, local: true do |f| %>
+    <%= form_with model: [@customer, @pawn], url: pawns_path(@customer.id), local: true do |f| %>
       <div class='error_messages'>
         <%= render 'layouts/error_messages', model: f.object %>
       </div>
@@ -20,7 +20,7 @@
         品物詳細
       </div>
       <div class='form_name_part'>
-        <%= f.text_area :item_detail, class:"last-name", id:"last-name", size:"30x4", maxlength:"300" %>
+        <%= f.text_area :item_detail, class:"item-detail", id:"item-detail", size:"30x5", maxlength:"300" %>
       </div>
       <div class='form_label_text'>
         備考
@@ -28,6 +28,7 @@
       <div class="remarks_form">
         <%= f.text_area :remarks, class:"remarks", id:"remarks", size:"30x3", maxlength:"200" %>
       </div>
+      <%# f.hidden_field :customer_id, value: @customer.id, class:"remarks", id:"remarks", size:"30x3", maxlength:"200" %>
       <div class='register-btn'>
         <%= f.submit "登録" ,class:"register-btn", data: { confirm: 'この情報で登録していいですか?' } %>
       </div>

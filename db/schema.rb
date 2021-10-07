@@ -57,9 +57,9 @@ ActiveRecord::Schema.define(version: 2021_09_27_055429) do
   create_table "pawns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "item_name", null: false
     t.integer "item_price", null: false
-    t.text "item_datail", null: false
+    t.text "item_detail", null: false
     t.text "item_remarks"
-    t.integer "item_status", null: false
+    t.integer "item_status", default: 0, null: false
     t.bigint "customer_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
