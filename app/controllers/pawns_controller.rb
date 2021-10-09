@@ -1,6 +1,7 @@
 class PawnsController < ApplicationController
-  before_action :set_customer, only: [:new, :create]
-  before_action :move_to_index, only: [:new, :create]
+  before_action :set_customer, except: [:index, :result]
+  before_action :set_pawn, only: [:create]
+  before_action :move_to_index, except: [:index]
 
   def index
   end
@@ -11,17 +12,25 @@ class PawnsController < ApplicationController
   end
 
   def create
-    @pawn = Pawn.new(pawn_params)
     if @pawn.save
-      redirect_to root_path
+      redirect_to result_pawns_path(@pawn.id)
     else
       render new_pawn_path
     end
   end
 
+  def result
+    @pawn = Pawn.find(params[:format])
+    @customer = Customer.find(@pawn.customer_id)
+  end
+
 private
   def set_customer
     @customer = Customer.find(params[:format])
+  end
+
+  def set_pawn
+    @pawn = Pawn.new(pawn_params)
   end
 
   def move_to_index

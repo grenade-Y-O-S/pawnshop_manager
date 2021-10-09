@@ -28,9 +28,8 @@
       <div class="remarks_form">
         <%= f.text_area :remarks, class:"remarks", id:"remarks", size:"30x3", maxlength:"200" %>
       </div>
-      <%# f.hidden_field :customer_id, value: @customer.id, class:"remarks", id:"remarks", size:"30x3", maxlength:"200" %>
       <div class='register-btn'>
-        <%= f.submit "登録" ,class:"register-btn", data: { confirm: 'この情報で登録していいですか?' } %>
+        <%= f.submit "登録", class:"register-btn", data: { confirm: 'この情報で登録していいですか?' } %>
       </div>
     <% end %>
   </div>

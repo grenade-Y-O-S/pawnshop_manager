@@ -9,6 +9,11 @@ Rails.application.routes.draw do
         get 'search'
       end
     end
-    resources :pawns, only: [:index, :new, :create]
+
+    resources :pawns, only: [:index, :new, :create] do
+      collection do
+        get 'result'
+      end
+    end
   end
 end

@@ -1,0 +1,15 @@
+<body class='pawn_main'>
+  <div class='title'>
+    質情報を登録しました
+  </div>
+
+  <%= render partial: "shared/display-pawn" , locals: { customer: @customer, pawn: @pawn } %>
+
+  <div>
+    <%= link_to root_path do %>
+      <div class='buttons pawn_button'>
+        トップへ戻る
+      </div>
+    <% end %>
+  </div>
+</body>
