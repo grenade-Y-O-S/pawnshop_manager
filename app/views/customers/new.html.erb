@@ -1,0 +1,9 @@
+<body class='pawn_main'>
+  <div class='title'>
+    お客様情報を登録してください
+  </div>
+
+  <%= render partial: "shared/customer-form" , locals: { customer: @customer } %>
+
+  <%= render partial: "shared/back-button" , locals: { back_link: pawns_path } %>
+</body>

@@ -1,0 +1,11 @@
+.be-center{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.move_btn{
+  width: 200px;
+  margin: 50px 0px 0px calc(50% - 100px);
+}

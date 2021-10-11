@@ -1,0 +1,36 @@
+.form_layout{
+  margin: 30px 0px 0px 30px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.form_layput_lines{
+  display: flex;
+  justify-content: left;
+  margin: 20px 0px;
+}
+
+.form_name_part{
+  width: 40px;
+}
+
+.kanji_first_name{
+  margin-left: 70px;
+}
+
+.kana_last_name{
+  margin-left: 30px;
+}
+
+.job_part{
+  margin-left: 20px;
+}
+
+.register-btn{
+  margin-left: 50px;
+}
+
+.error_messages{
+  font-size: 16px;
+}

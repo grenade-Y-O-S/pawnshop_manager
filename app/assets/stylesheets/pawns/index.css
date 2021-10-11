@@ -1,0 +1,13 @@
+.pawn_main{
+  background: lightskyblue;
+}
+
+.pawn_button{
+  font-size: 40px;
+  padding: 20px 0px;
+}
+
+.index_link{
+  width: 400px;
+  margin: 50px calc(50vw - 200px);
+}

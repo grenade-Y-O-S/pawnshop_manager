@@ -4,7 +4,6 @@ a {
 
 .main {
   background: lightgreen;
-  height: 100vh;
 }
 
 .title{
@@ -19,12 +18,15 @@ a {
 }
 
 .buttons{
-  border: 1px solid white;
+  border: 2px solid white;
   background: black;
   text-align: center;
+  color: white;
+}
+
+.top_page_btn{
   font-size: 40px;
   padding: 20px 0px;
-  color: white;
 }
 
 .first_line_button, .second_line_button{

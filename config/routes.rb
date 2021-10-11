@@ -3,7 +3,17 @@ Rails.application.routes.draw do
   root to: 'customers#index'
 
   Rails.application.routes.draw do
-    resources :customers, only: [:index]
-  end
+    resources :customers, only: [:index, :new, :create] do
+      collection do
+        get 'input'
+        get 'search'
+      end
+    end
 
+    resources :pawns, only: [:index, :new, :create] do
+      collection do
+        get 'result'
+      end
+    end
+  end
 end

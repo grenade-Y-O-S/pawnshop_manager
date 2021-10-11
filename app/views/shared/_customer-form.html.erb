@@ -1,0 +1,104 @@
+<div class='form_layout'>
+  <div class='second_frame'>
+  <%= form_with model: @customer, url: customers_path, local: true do |f| %>
+    <div class='error_messages'>
+      <%= render 'layouts/error_messages', model: f.object %>
+    </div>
+    <div class='form_layput_lines'>
+      <div class='kanji_last_name'>
+        <div class='form_label_text'>
+          姓(漢字)
+        </div>
+        <div class='form_name_part'>
+          <%= f.text_area :last_name, class:"last-name", id:"last-name", size:"10x1", maxlength:"10" %>
+        </div>
+      </div>
+      <div class='kanji_first_name'>
+        <div class='form_label_text'>
+          名(漢字)
+        </div>
+        <div class='form_name_part'>
+          <%= f.text_area :first_name, class:"first-name", id:"first-name", size:"10x1", maxlength:"10", autofocus: true %>
+        </div>
+      </div>
+    </div>
+    <div class='form_layput_lines'>
+      <div class='kana_first_name'>
+        <div class='form_label_text'>
+          姓(カタカナ)
+        </div>
+        <div class='form_name_part'>
+          <%= f.text_area :last_name_kana, class:"last-name", id:"last-name", size:"12x1", maxlength:"10" %>
+        </div>
+      </div>
+      <div class='kana_last_name'>
+        <div class='form_label_text'>
+          名(カタカナ)
+        </div>
+        <div class='form_name_part'>
+          <%= f.text_area :first_name_kana, class:"first-name", id:"first-name", size:"12x1", maxlength:"10" %>
+        </div>
+      </div>
+    </div>
+    <div class='address_part'>
+      <div class='form_label_text'>
+        住所
+      </div>
+      <div class='address_form'>
+        <%= f.text_area :address, class:"address", id:"address", size:"30x2", maxlength:"1000" %>
+      </div>
+    </div>
+    <div class='form_layput_lines'>
+      <div class='phone_number_part'>
+        <div class='form_label_text'>
+          電話番号
+        </div>
+        <div class='phone_number_form'>
+          <%= f.text_area :phone_number, class:"phone-number", id:"phone-number", size:"20x1", maxlength:"15" %>
+        </div>
+      </div>
+      <div class='job_part'>
+        <div class='form_label_text'>
+          職業
+        </div>
+        <div class='job_form'>
+          <%= f.text_area :job, class:"job", id:"job", size:"10x1", maxlength:"20" %>
+        </div>
+      </div>
+    </div>
+    <div class="form_layput_lines">
+      <div class='birth_date_part'>
+        <div class='form_label_text'>
+          生年月日
+        </div>
+        <div class='birth_date_form'>
+          <%= raw sprintf(
+          f.date_select(
+          :birth_date,
+          class:'select-birth',
+          id:"birth-date",
+          use_month_numbers: true,
+          prompt:'--',
+          start_year: 1930,
+          end_year: (Time.now.year - 17),
+          date_separator: '%s'),
+          "年", "月") + "日" %>
+        </div>
+      </div>
+    </div>
+    <div class="form_layput_lines">
+      <div class='remarks_part'>
+        <div class='form_label_text'>
+          備考
+        </div>
+        <div class="remarks_form">
+          <%= f.text_area :remarks, class:"remarks", id:"remarks", size:"30x3", maxlength:"200" %>
+        </div>
+      </div>
+    </div>
+    <div class='register-btn'>
+      <%= f.submit "登録" ,class:"register-btn", data: { confirm: 'この情報で登録していいですか?' } %>
+    </div>
+  <% end %>
+  </div>
+</div>

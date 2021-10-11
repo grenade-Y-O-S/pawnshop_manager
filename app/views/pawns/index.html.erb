@@ -1,0 +1,26 @@
+<body class='pawn_main'>
+  <div class='title'>
+    お客様情報を選択してください
+  </div>
+  <div class='index_link'>
+    <%= link_to new_customer_path do %>
+      <div class='buttons pawn_button'>
+        新規客
+      </div>
+    <% end %>
+  </div>
+  <div class='index_link'>
+    <%= link_to input_customers_path do %>
+      <div class='buttons pawn_button'>
+        リピーター
+      </div>
+    <% end %>
+  </div>
+  <div class='index_link'>
+    <%= link_to root_path do %>
+      <div class='buttons pawn_button'>
+        トップへ戻る
+      </div>
+    <% end %>
+  </div>
+</body>

@@ -1,0 +1,15 @@
+<div class='form_layout'>
+  <div class='second_frame'>
+    <div class="search-form">
+      <%= form_with(scope: :search, url: search_customers_path, method: :get, local: true) do |f| %>
+        <div class="field">
+          <%= select_tag 'column' ,options_for_select([['姓(漢字)', 'last_name'], ['姓(カタカナ)', 'last_name_kana'], ['質番号', 'id']]) %>
+          <%= text_field_tag (:word) %>
+        </div>
+        <div class='register-btn'>
+          <%= f.submit "検索" ,class:"register-btn", url: search_customers_path, data: { confirm: 'この条件で検索していいですか?' } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
