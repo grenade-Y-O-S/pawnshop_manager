@@ -13,10 +13,10 @@
 ActiveRecord::Schema.define(version: 2021_09_27_055429) do
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "first_name", null: false
     t.string "last_name", null: false
-    t.string "first_name_kana", null: false
+    t.string "first_name", null: false
     t.string "last_name_kana", null: false
+    t.string "first_name_kana", null: false
     t.string "address", null: false
     t.date "birth_date", null: false
     t.string "phone_number", null: false

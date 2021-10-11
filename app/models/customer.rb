@@ -3,10 +3,10 @@ class Customer < ApplicationRecord
   has_many :purchases
 
   with_options presence: true do
-    validates :first_name
     validates :last_name
-    validates :first_name_kana
-    validates :last_name_kana
+    validates :first_name
+    validates :last_name_kana, format: { with: /\A^[ァ-ンヴー]+$\z/ }
+    validates :first_name_kana, format: { with: /\A^[ァ-ンヴー]+$\z/ }
     validates :address
     validates :phone_number
     validates :birth_date
