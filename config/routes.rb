@@ -15,5 +15,7 @@ Rails.application.routes.draw do
         get 'result'
       end
     end
+
+    resources :purchases, only: [:index, :new, :create]
   end
 end
