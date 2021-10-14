@@ -1,3 +1,3 @@
 <body class='purchase_main'>
-  <%= render partial: "shared/three-buttons-index" , locals: { page_title: "お客様情報を選択してください", new_data: new_purchase_path, search_data: '#' } %>
+  <%= render partial: "shared/three-buttons-index" , locals: { page_title: "お客様情報を選択してください", new_data: new_customer_path("purchase"), search_data: input_customers_path("purchase") } %>
 </body>

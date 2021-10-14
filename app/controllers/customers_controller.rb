@@ -9,7 +9,11 @@ class CustomersController < ApplicationController
   def create
     @customer = Customer.new(customer_params)
     if @customer.save
-      redirect_to new_pawn_path(@customer.id)
+      if params[:format] == "pawn"
+        redirect_to new_pawn_path(@customer.id)
+      elsif params[:format] == "purchase"
+        redirect_to new_purchase_path(@customer.id)
+      end
     else
       render new_customer_path
     end

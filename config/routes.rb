@@ -16,6 +16,10 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :purchases, only: [:index, :new, :create]
+    resources :purchases, only: [:index, :new, :create] do
+      collection do
+        get 'result'
+      end
+    end
   end
 end

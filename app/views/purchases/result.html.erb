@@ -1,0 +1,15 @@
+<body class='purchase_main'>
+  <div class='title'>
+    買取情報を登録しました
+  </div>
+
+  <%= render partial: "shared/display-purchase" , locals: { customer: @customer, purchase: @purchase } %>
+
+  <div class='index_link'>
+    <%= link_to root_path do %>
+      <div class='buttons pawn_button'>
+        トップへ戻る
+      </div>
+    <% end %>
+  </div>
+</body>
