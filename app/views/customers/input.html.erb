@@ -1,10 +1,24 @@
-<body class='pawn_main'>
-  <div class='title'>
-    お客様情報検索
-  </div>
+<% if params[:format] == "pawn" %>
+  <body class='pawn_main'>
+    <div class='title'>
+      お客様情報検索
+    </div>
 
-  <%= render partial: "shared/search-customer" %>
+    <%= render partial: "shared/search-customer", locals: { process: "pawn" } %>
 
-  <%= render partial: "shared/back-button" , locals: { back_link: pawns_path } %>
+    <%= render partial: "shared/back-button" , locals: { back_link: pawns_path } %>
 
-</body>
+  </body>
+<% elsif params[:format] == "purchase" %>
+
+  <body class='purchase_main'>
+    <div class='title'>
+      お客様情報検索
+    </div>
+
+    <%= render partial: "shared/search-customer", locals: { process: "purchase" } %>
+
+    <%= render partial: "shared/back-button" , locals: { back_link: purchases_path } %>
+
+  </body>
+<% end %>

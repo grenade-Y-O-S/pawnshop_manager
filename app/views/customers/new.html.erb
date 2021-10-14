@@ -1,9 +1,22 @@
-<body class='pawn_main'>
-  <div class='title'>
-    お客様情報を登録してください
-  </div>
+<% if params[:format] == "pawn" %>
+  <body class='pawn_main'>
+    <div class='title'>
+      お客様情報を登録してください
+    </div>
 
-  <%= render partial: "shared/customer-form" , locals: { customer: @customer } %>
+    <%= render partial: "shared/customer-form", locals: { customer: @customer, process: "pawn" } %>
 
-  <%= render partial: "shared/back-button" , locals: { back_link: pawns_path } %>
-</body>
+    <%= render partial: "shared/back-button" , locals: { back_link: pawns_path } %>
+  </body>
+
+<% elsif params[:format] == "purchase" %>
+    <body class='purchase_main'>
+    <div class='title'>
+      お客様情報を登録してください
+    </div>
+
+    <%= render partial: "shared/customer-form" , locals: { customer: @customer, process: "purchase" } %>
+
+    <%= render partial: "shared/back-button" , locals: { back_link: purchases_path } %>
+  </body>
+<% end %>

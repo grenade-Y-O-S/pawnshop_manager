@@ -15,3 +15,7 @@ ja:
         item_name: 品物名
         item_price: 金額
         item_detail: 品物詳細
+      purchase:
+        buy_item_name: 品物名
+        buy_item_price: 金額
+        buy_item_detail: 品物詳細
