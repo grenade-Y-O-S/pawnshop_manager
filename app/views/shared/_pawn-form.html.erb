@@ -1,6 +1,6 @@
 <div class='form_layout'>
   <div class='second_frame'>
-    <%= form_with model: [@customer, @purchase], url: purchases_path(@customer.id), local: true do |f| %>
+    <%= form_with model: [@customer, @pawn], url: pawns_path(@customer.id), local: true do |f| %>
       <div class='error_messages'>
         <%= render 'layouts/error_messages', model: f.object %>
       </div>
@@ -8,19 +8,25 @@
         品物名
       </div>
       <div class='form_name_part'>
-        <%= f.text_area :buy_item_name, class:"item-name-box", id:"item-name", size:"20x1", maxlength:"40", autofocus: true %>
+        <%= f.text_area :item_name, class:"item-name-box", id:"item-name", size:"20x1", maxlength:"40", autofocus: true %>
       </div>
       <div class='form_label_text'>
         金額
       </div>
       <div class='form_name_part'>
-        <%= f.text_area :buy_item_price, class:"first-name", id:"first-name", size:"12x1", maxlength:"10" %>
+        <%= f.text_area :item_price, class:"first-name", id:"first-name", size:"12x1", maxlength:"10" %>
       </div>
       <div class='form_label_text'>
         品物詳細
       </div>
       <div class='form_name_part'>
-        <%= f.text_area :buy_item_detail, class:"item-detail", id:"item-detail", size:"30x5", maxlength:"300" %>
+        <%= f.text_area :item_detail, class:"item-detail", id:"item-detail", size:"30x5", maxlength:"300" %>
+      </div>
+      <div class='form_label_text'>
+        備考
+      </div>
+      <div class="remarks_form">
+        <%= f.text_area :remarks, class:"remarks", id:"remarks", size:"30x3", maxlength:"200" %>
       </div>
       <div class='register-btn'>
         <%= f.submit "登録", class:"register-btn", data: { confirm: 'この情報で登録していいですか?' } %>

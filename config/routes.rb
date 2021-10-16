@@ -22,7 +22,10 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :purchases, only: [:index]
-
+    resources :interests, only: [:index, :new, :create] do
+      collection do
+        get 'search'
+      end
+    end
   end
 end

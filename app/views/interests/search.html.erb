@@ -1,0 +1,10 @@
+<body class='interest_main'>
+  <div class='title'>検索結果</div>
+  <% if @pawn == nil %>
+    該当するデータはありませんでした。検索をやり直してください。
+  <% else %>
+    <%= render partial: "shared/display-pawn" , locals: { pawn: @pawn } %>
+  <% end %>
+
+  <%= render partial: "shared/back-button" , locals: { back_link: interests_path } %>
+</body>
