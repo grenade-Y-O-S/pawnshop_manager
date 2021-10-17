@@ -1,3 +1,21 @@
 .interest_main{
   background: rgb(195, 166, 255);
 }
+
+.interest_result_main{
+  color: white;
+  width: 250px;
+  margin: 30px 0px 30px calc(50vw - 125px);
+}
+
+.interest_result_category{
+  border: 1px white solid;
+  width: 100px;
+  padding-left: 5px;
+}
+
+.interest_result_data{
+  border: 1px white solid;
+  width: 150px;
+  padding-left: 5px;
+}

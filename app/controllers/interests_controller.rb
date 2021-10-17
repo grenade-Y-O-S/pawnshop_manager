@@ -16,7 +16,7 @@ class InterestsController < ApplicationController
     @interest = Interest.new(interest_params)
     binding.pry
     if @interest.save
-      redirect_to root_path
+      redirect_to result_interests_path(@pawn.id)
     else
       render new_interest_path(@pawn.id)
     end
