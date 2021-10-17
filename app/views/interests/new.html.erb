@@ -1,0 +1,7 @@
+<body class='interest_main'>
+  <div class='title'>
+    利息の回数を入力してください
+  </div>
+  <%= render partial: "shared/interest-form", locals: { process: interests_path(@pawn.id) } %>
+  <%= render partial: "shared/back-button" , locals: { back_link: input_customers_path(params[:format]) } %>
+</body>

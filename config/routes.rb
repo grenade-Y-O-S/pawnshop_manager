@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'customers#index'
 
   Rails.application.routes.draw do
@@ -25,6 +24,7 @@ Rails.application.routes.draw do
     resources :interests, only: [:index, :new, :create] do
       collection do
         get 'search'
+        get 'result'
       end
     end
   end

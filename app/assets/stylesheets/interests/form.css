@@ -1,0 +1,16 @@
+.simple_text{
+  text-align: center;
+}
+
+.interest_form{
+  width: 200px;
+  margin: 30px 0 20px calc(50vw - 100px);
+}
+
+.short_text_field{
+  width: 20px;
+}
+
+.short_text_button{
+  width: 30px;
+}

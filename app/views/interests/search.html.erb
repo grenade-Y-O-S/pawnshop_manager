@@ -1,7 +1,9 @@
 <body class='interest_main'>
   <div class='title'>検索結果</div>
   <% if @pawn == nil %>
+    <div class="simple_text">
     該当するデータはありませんでした。検索をやり直してください。
+    </div>
   <% else %>
     <%= render partial: "shared/display-pawn" , locals: { pawn: @pawn } %>
   <% end %>

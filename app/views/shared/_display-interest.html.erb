@@ -1,0 +1,48 @@
+<div class='interest_result_main'>
+    <div class='customer_data_line'>
+      <div class='result_category'>
+        お客様氏名
+      </div>
+      <div class='flex_left result_data'>
+        <div class='first_name_column'>
+          <%= customer.last_name %>
+        </div>
+        <div>
+          <%= customer.first_name %>
+        </div>
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='result_category'>
+        品物名
+      </div>
+      <div class='result_data'>
+        <%= pawn.item_name %>
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='result_category'>
+        金額
+      </div>
+      <div class='result_data'>
+        <%= pawn.item_price %>
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='result_category'>
+        累計利息
+      </div>
+      <div class='result_data'>
+        <%= total_interest(pawn.id) %>
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='result_category'>
+        入質日
+      </div>
+      <div class='result_data'>
+        <%= pawn.created_at.strftime("%Y年%m月%d日") %>
+      </div>
+    </div>
+  </div>
+</div>
