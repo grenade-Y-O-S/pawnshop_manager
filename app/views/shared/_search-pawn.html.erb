@@ -1,17 +1,17 @@
-<div class='form_layout'>
-  <div class='second_frame'>
-    <div class="search-form">
-      <%= form_with(scope: :search, url: process, method: :get, local: true) do |f| %>
-        <div class="field">
-          <div>
-          質データIDを入力してください
-          </div>
-          <%= text_field_tag(:word) %>
+<div class='interest_form'>
+  <%= form_with(scope: :search, url: process, method: :get, local: true) do |f| %>
+    <div class="field">
+      <div>
+      質データIDを入力してください
+      </div>
+      <div class='short-form-field flex_left'>
+        <div class='short_text_area'>
+          <%= f.text_area :word, class:"pawn-search-word", id:"pawn-seerach-word", size:"4x1", maxlength:"3" %>
         </div>
-        <div class='register-btn'>
-          <%= f.submit "検索" ,class:"register-btn", data: { confirm: 'この条件で検索していいですか?' } %>
+        <div>
+          <%= f.submit "検索" ,class:"short-text-register", data: { confirm: 'この条件で検索していいですか?' } %>
         </div>
-      <% end %>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>

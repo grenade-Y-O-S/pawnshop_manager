@@ -3,14 +3,15 @@
 }
 
 .interest_form{
-  width: 200px;
-  margin: 30px 0 20px calc(50vw - 100px);
+  width: 250px;
+  margin: 10px 0 20px calc(50vw - 125px);
 }
 
 .short_text_field{
   width: 20px;
 }
 
-.short_text_button{
-  width: 30px;
+.short-form-field{
+  margin-top: 10px;
+  padding-left: 40px;
 }

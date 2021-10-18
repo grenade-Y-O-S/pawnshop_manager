@@ -5,7 +5,7 @@
     該当するデータはありませんでした。検索をやり直してください。
     </div>
   <% else %>
-    <%= render partial: "shared/display-pawn" , locals: { pawn: @pawn } %>
+    <%= render partial: "shared/search-result-interest" , locals: { pawn: @pawn } %>
   <% end %>
 
   <%= render partial: "shared/back-button" , locals: { back_link: interests_path } %>
