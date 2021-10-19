@@ -37,16 +37,18 @@ class InterestsController < ApplicationController
       end
     else
       if Customer.search(@column, word).exists?
-        pawns_data = search_by_name(@column, word)
+        @pawns = search_by_name(@column, word)
+        binding.pry
       else
         @pawns = nil
+        binding.pry
       end
     end
   end
 
   def pawn_timelimit(pawn_id)
     pawn_date = Pawn.find(pawn_id).created_at.to_date
-    total = total_interest(pawn_id)
+    total = Interest.total_interest(pawn_id)
     timelimit = ((pawn_date >> (total + 3)) - 1).strftime("%Y年%m月%d日")
     return timelimit
   end
@@ -65,11 +67,23 @@ class InterestsController < ApplicationController
 
   def get_pawns_data(customer, pawn)
     name = "#{customer[:last_name]} #{customer[:first_name]}"
-    price = pawn[:item_price]
-    total = total_interest(pawn[:id])
+    total = Interest.total_interest(pawn[:id])
     limit_date = pawn_timelimit(pawn[:id])
-    @pawn = {name: name, price: price, interest: interest_calculator(price), total_interest: total, date: pawn[:created_at].to_date, limit_date: limit_date}
+    price = pawn[:item_price]
+    interest = interest_calculator(price).to_s(:delimited)
+    @pawn = {name: name, item_name: pawn[:item_name], price: price, interest: interest, remarks: pawn[:remarks], total_interest: total, date: pawn[:created_at].to_date, limit_date: limit_date, id: pawn[:id]}
     return @pawn
+  end
+
+  def interest_calculator(price)
+    if price < 30000
+      interest = price / 100 * 8
+    elsif price > 100000
+      interest = price / 100 * 5
+    else
+      interest = (price - 30000) / 100 * 5 + 2400
+    end
+    return interest
   end
 
   private

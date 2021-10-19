@@ -2,10 +2,18 @@
   <div class='data_box'>
     <div class='customer_data_line'>
       <div class='result_category'>
+        お客様氏名
+      </div>
+      <div class='result_data'>
+        <%= pawn[:name] %>
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='result_category'>
         品物名
       </div>
       <div class='result_data'>
-        <%= pawn.item_name %>
+        <%= pawn[:item_name] %>
       </div>
     </div>
     <div class='customer_data_line'>
@@ -13,7 +21,7 @@
         金額
       </div>
       <div class='result_data'>
-        <%= pawn.item_price.to_s(:delimited) %>円
+        <%= pawn[:price] %>円
       </div>
     </div>
     <div class='customer_data_line'>
@@ -21,20 +29,7 @@
         利息金額
       </div>
       <div class='result_data'>
-        <%= interest_calculator(pawn.item_price).to_s(:delimited) %>円
-      </div>
-    </div>
-    <div class='customer_data_line'>
-      <div class='result_category'>
-        お客様氏名
-      </div>
-      <div class='flex_left result_data'>
-        <div class='first_name_column'>
-          <%= Customer.find(pawn.customer_id).last_name %>
-        </div>
-        <div>
-          <%= Customer.find(pawn.customer_id).first_name %>
-        </div>
+        <%= pawn[:interest] %>円
       </div>
     </div>
     <div class='customer_data_line'>
@@ -42,7 +37,7 @@
         備考
       </div>
       <div class='result_data'>
-        <%= pawn.item_remarks %>
+        <%= pawn[:remarks] %>
       </div>
     </div>
     <div class='customer_data_line'>
@@ -50,12 +45,28 @@
         入質日
       </div>
       <div class='result_data'>
-        <%= pawn.created_at.strftime("%Y年%m月%d日") %>
+        <%= pawn[:date] %>
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='result_category'>
+        合計利息回数
+      </div>
+      <div class='result_data'>
+        <%= pawn[:total_interest] %>
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='result_category'>
+        期限
+      </div>
+      <div class='result_data'>
+        <%= pawn[:limit_date] %>
       </div>
     </div>
   </div>
   <div class='choise_box white_border data_back'>
-    <%= link_to new_interest_path(pawn.id), data: { confirm: 'このお客様でよろしいですか?' } do %>
+    <%= link_to new_interest_path(pawn[:id]), data: { confirm: 'このお客様でよろしいですか?' } do %>
       <div class='choise_btn'>
         選択
       </div>
