@@ -1,71 +1,79 @@
 <div class='pawn_result_main'>
-  <div class='data_box'>
+  <div class='interest_search_data_box'>
     <div class='customer_data_line'>
-      <div class='result_category'>
+      <div class='interest_category'>
+        質番号
+      </div>
+      <div class='interest_search_result_data'>
+        <%= pawn[:id] %>
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='interest_category'>
         お客様氏名
       </div>
-      <div class='result_data'>
+      <div class='interest_search_result_data'>
         <%= pawn[:name] %>
       </div>
     </div>
     <div class='customer_data_line'>
-      <div class='result_category'>
+      <div class='interest_category'>
         品物名
       </div>
-      <div class='result_data'>
+      <div class='interest_search_result_data'>
         <%= pawn[:item_name] %>
       </div>
     </div>
     <div class='customer_data_line'>
-      <div class='result_category'>
+      <div class='interest_category'>
         金額
       </div>
-      <div class='result_data'>
-        <%= pawn[:price] %>円
+      <div class='interest_search_result_data'>
+        <%= pawn[:price].to_s(:delimited) %>円
       </div>
     </div>
     <div class='customer_data_line'>
-      <div class='result_category'>
+      <div class='interest_category'>
         利息金額
       </div>
-      <div class='result_data'>
-        <%= pawn[:interest] %>円
+      <div class='interest_search_result_data'>
+        <%= interest_calculator(pawn[:price]) %>円
       </div>
     </div>
     <div class='customer_data_line'>
-      <div class='result_category'>
+      <div class='interest_category'>
         備考
       </div>
-      <div class='result_data'>
+      <div class='interest_search_result_data'>
         <%= pawn[:remarks] %>
       </div>
     </div>
     <div class='customer_data_line'>
-      <div class='result_category'>
+      <div class='interest_category'>
         入質日
       </div>
-      <div class='result_data'>
+      <div class='interest_search_result_data'>
         <%= pawn[:date] %>
       </div>
     </div>
     <div class='customer_data_line'>
-      <div class='result_category'>
+      <div class='interest_category'>
         合計利息回数
       </div>
-      <div class='result_data'>
-        <%= pawn[:total_interest] %>
+      <div class='interest_search_result_data'>
+        <%= pawn[:total_interest] %>回
       </div>
     </div>
     <div class='customer_data_line'>
-      <div class='result_category'>
+      <div class='interest_category'>
         期限
       </div>
-      <div class='result_data'>
-        <%= pawn[:limit_date] %>
+      <div class='interest_search_result_data'>
+        <%= pawn_timelimit(pawn[:id]) %>
       </div>
     </div>
   </div>
-  <div class='choise_box white_border data_back'>
+  <div class='interest_search_choise_box white_border data_back'>
     <%= link_to new_interest_path(pawn[:id]), data: { confirm: 'このお客様でよろしいですか?' } do %>
       <div class='choise_btn'>
         選択

@@ -6,11 +6,7 @@ class Interest < ApplicationRecord
   end
 
   def self.search(column, word)
-    if word != ""
-      return Customer.where("#{column} LIKE?","#{word}%")
-    else
-      @pawn = nil
-    end
+    return Customer.where("#{column} LIKE?","#{word}%").order("created_at DESC")
   end
 
   def self.search_pawn_data(word)
@@ -25,9 +21,9 @@ class Interest < ApplicationRecord
     end
   end
 
-  def self.total_interest(id)
-    if Interest.exists?(id: id)
-      interests = Interest.where(pawn_id: id)
+  def self.total_interest(pawn_id)
+    if Interest.exists?(id: pawn_id)
+      interests = Interest.where(pawn_id: pawn_id)
       total = 0
       interests.each do |data|
         total += data[:interests_number]

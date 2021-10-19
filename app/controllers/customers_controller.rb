@@ -25,7 +25,7 @@ class CustomersController < ApplicationController
   def search
     @column = params[:column]
     word = params[:word]
-    if word == nil
+    if word == ''
       @customer = nil
     elsif @column == "id"
       if Pawn.exists?(word)

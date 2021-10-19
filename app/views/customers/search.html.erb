@@ -7,7 +7,9 @@
 <div class='title'>検索結果</div>
 
 <% if @customer == nil %>
-  該当するデータはありませんでした。検索をやり直してください。
+  <div class="nil_message">
+    該当するデータはありませんでした。検索をやり直してください。
+  </div>
 <% elsif params[:column] == "id" %>
   <%= render partial: "shared/search-result-customer", locals: {customer_record: @customer} %>
 <% else %>

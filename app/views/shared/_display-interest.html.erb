@@ -30,10 +30,18 @@
   </div>
   <div class='customer_data_line'>
     <div class='interest_result_category'>
+      今回利息
+    </div>
+    <div class='interest_result_data'>
+      <%= @interest.interests_number %>回
+    </div>
+  </div>
+  <div class='customer_data_line'>
+    <div class='interest_result_category'>
       累計利息
     </div>
     <div class='interest_result_data'>
-      <%= total_interest(pawn.id) %>ヶ月分
+      <%= Interest.total_interest(pawn.id) %>回
     </div>
   </div>
   <div class='customer_data_line'>
