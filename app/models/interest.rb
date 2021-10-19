@@ -24,4 +24,18 @@ class Interest < ApplicationRecord
       end
     end
   end
+
+  def self.total_interest(id)
+    if Interest.exists?(id: id)
+      interests = Interest.where(pawn_id: id)
+      total = 0
+      interests.each do |data|
+        total += data[:interests_number]
+      end
+      return total
+    else
+      return 0
+    end
+  end
+
 end
