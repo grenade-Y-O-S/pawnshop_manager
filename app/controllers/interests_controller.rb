@@ -5,7 +5,6 @@ class InterestsController < ApplicationController
 
   def new
     @interest = Interest.new
-    @pawn = Pawn.find(params[:format])
     total_interest = Interest.total_interest(@pawn[:id])
   end
 
@@ -14,7 +13,7 @@ class InterestsController < ApplicationController
     if @interest.save
       redirect_to result_interests_path(@pawn.id)
     else
-      render new_interest_path(@pawn.id)
+      render new_interest_path
     end
   end
 

@@ -1,11 +1,11 @@
 <div class="interest_form">
   <%= form_with model: @interest, url: process, local: true do |f| %>
+    <div class='error_messages'>
+      <%= render 'layouts/error_messages', model: f.object %>
+    </div>
     <div class="flex_left">
-      <div class='error_messages'>
-        <%= render 'layouts/error_messages', model: f.object %>
-      </div>
       <div>
-        <%= f.text_area :interests_number, class:"interest-number", id:"interest-number", size:"4x1", maxlength:"3" %>
+        <%= f.text_area :interests_number, class:"interests-number", id:"interests-number", size:"4x1", maxlength:"3" %>
       </div>
       <div>
         <%= f.submit "登録" ,class:"register-btn", data: { confirm: 'この条件で検索していいですか?' } %>
