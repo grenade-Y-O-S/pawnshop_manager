@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :pawns, only: [:index, :new, :create] do
       collection do
         get 'result'
+        get 'return_input'
       end
     end
 

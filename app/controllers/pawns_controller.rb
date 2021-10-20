@@ -1,7 +1,7 @@
 class PawnsController < ApplicationController
-  before_action :set_customer, except: [:index, :result]
+  before_action :set_customer, except: [:index, :result, :return_input]
   before_action :set_pawn, only: [:create]
-  before_action :move_to_index, except: [:index]
+  before_action :move_to_index, except: [:index, :return_input]
 
   def index
   end
@@ -21,6 +21,9 @@ class PawnsController < ApplicationController
   def result
     @pawn = Pawn.find(params[:format])
     @customer = Customer.find(@pawn.customer_id)
+  end
+
+  def return_input
   end
 
 private

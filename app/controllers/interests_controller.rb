@@ -1,5 +1,7 @@
 class InterestsController < ApplicationController
   before_action :set_pawn, only: [:new, :create]
+  before_action :move_to_index, only: [:new, :create, :result]
+
   def index
   end
 
@@ -76,4 +78,8 @@ class InterestsController < ApplicationController
   def interest_params
     params.require(:interest).permit(:interests_number).merge(pawn_id: params[:format])
   end
+end
+
+def move_to_index
+  redirect_to root_path if params[:format] == nil
 end
