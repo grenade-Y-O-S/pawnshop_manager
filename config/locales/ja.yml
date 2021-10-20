@@ -19,3 +19,5 @@ ja:
         buy_item_name: 品物名
         buy_item_price: 金額
         buy_item_detail: 品物詳細
+      interest:
+        interests_number: 利息回数

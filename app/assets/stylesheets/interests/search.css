@@ -1,0 +1,18 @@
+.interest_category{
+  width: 100px;
+  border: 1px white solid;
+}
+
+.interest_search_result_data{
+  border: 1px white solid;
+  width: 200px;
+}
+
+.interest_search_choise_box{
+  width: 80px;
+  padding: 10px;
+}
+
+.interest_category, .interest_search_result_data{
+  padding-left: 5px;
+}

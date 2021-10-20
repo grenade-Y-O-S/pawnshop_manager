@@ -39,7 +39,7 @@
 
 .result_category{
   border: 1px white solid;
-  width: 150px;
+  width: 100px;
 }
 
 .result_data{
@@ -54,4 +54,9 @@
   height: 50px;
   text-align: center;
   padding-top: 20px;
+}
+
+.nil_message{
+  text-align: center;
+  margin-bottom: 20px;
 }

@@ -5,7 +5,7 @@
     </div>
     <div>
       <div class='customer_data_line'>
-        <div class='result_category'>
+        <div class='display_pawn_category'>
           氏名
         </div>
         <div class='flex_left result_data'>
@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class='customer_data_line'>
-        <div class='result_category'>
+        <div class='display_pawn_category'>
           (カタカナ)
         </div>
         <div class='flex_left result_data'>
@@ -31,7 +31,7 @@
         </div>
       </div>
       <div class='customer_data_line'>
-        <div class='result_category'>
+        <div class='display_pawn_category'>
           住所
         </div>
         <div class='result_data'>
@@ -39,7 +39,7 @@
         </div>
       </div>
       <div class='customer_data_line'>
-        <div class='result_category'>
+        <div class='display_pawn_category'>
           備考
         </div>
         <div class='result_data'>
@@ -66,15 +66,7 @@
           金額
         </div>
         <div class='result_data'>
-          <%= pawn.item_price %>
-        </div>
-      </div>
-      <div class='customer_data_line'>
-        <div class='result_category'>
-          利息金額
-        </div>
-        <div class='result_data'>
-          <%= interest_calculator(pawn.item_price) %>
+          <%= pawn.item_price.to_s(:delimited) %>円
         </div>
       </div>
       <div class='customer_data_line'>
@@ -91,6 +83,22 @@
         </div>
         <div class='result_data'>
           <%= pawn.item_remarks %>
+        </div>
+      </div>
+      <div class='customer_data_line'>
+        <div class='result_category'>
+          利息金額
+        </div>
+        <div class='result_data'>
+          <%= interest_calculator(pawn.item_price) %>円
+        </div>
+      </div>
+      <div class='customer_data_line'>
+        <div class='result_category'>
+          期限
+        </div>
+        <div class='result_data'>
+          <%= pawn_timelimit(pawn.id) %>
         </div>
       </div>
     </div>

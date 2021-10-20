@@ -3,3 +3,9 @@
   margin: 20px 20px;
   font-size: 16px;
 }
+
+.toppage_btn{
+  width: 200px;
+  margin: 20px 0 20px calc(50vw - 100px);
+  font-size: 16px;
+}

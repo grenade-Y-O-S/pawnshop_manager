@@ -1,0 +1,14 @@
+.search_comment{
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.search_pawn_field{
+  width: 250px;
+  padding-left: 70px;
+}
+
+.flex_around{
+  display: flex;
+  justify-content: space-around;
+}

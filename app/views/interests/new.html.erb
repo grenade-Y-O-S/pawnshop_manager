@@ -1,0 +1,42 @@
+<body class='interest_main'>
+  <div class='title'>
+    利息の回数を入力してください
+  </div>
+  <div class='interest_result_main'>
+    <div class='customer_data_line'>
+      <div class='interest_result_category'>
+        累計利息
+      </div>
+      <div class='interest_result_data'>
+        <%= Interest.total_interest(@pawn.id) %>回
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='interest_result_category'>
+        入質日
+      </div>
+      <div class='interest_result_data'>
+        <%= @pawn.created_at.strftime("%Y年%m月%d日") %>
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='interest_result_category'>
+        期限
+      </div>
+      <div class='interest_result_data'>
+        <%= pawn_timelimit(@pawn.id) %>
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='interest_result_category'>
+        利息金額
+      </div>
+      <div class='interest_result_data'>
+        <%= interest_calculator(@pawn.item_price) %>円
+      </div>
+    </div>
+  </div>
+  <%= render partial: "shared/interest-form", locals: { process: interests_path(@pawn.id) } %>
+  <%= render partial: "shared/back-button" , locals: { back_link: input_customers_path(params[:format]) } %>
+</body>
+

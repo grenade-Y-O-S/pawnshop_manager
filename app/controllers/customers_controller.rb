@@ -25,7 +25,22 @@ class CustomersController < ApplicationController
   def search
     @column = params[:column]
     word = params[:word]
-    @customer = Customer.search(@column, word)
+    if word == ''
+      @customer = nil
+    elsif @column == "id"
+      if Pawn.exists?(word)
+        @pawn = Pawn.find(word)
+        @customer = Customer.find(@pawn.customer_id)
+      else
+        @customer = nil
+      end
+    else
+      if Customer.search(@column, word).exists?
+        @customer = Customer.search(@column, word)
+      else
+        @customer = nil
+      end
+    end
   end
 
 private

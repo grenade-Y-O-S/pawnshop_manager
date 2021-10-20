@@ -1,17 +1,21 @@
 <% if params[:format] == "pawn" %>
   <body class='pawn_main'>
-    <div class='title'>検索結果</div>
-
-    <%= render partial: "shared/search-result-customer", collection: @customer, as: "customer_record" %>
-
 <% elsif params[:format] == "purchase" %>
   <body class='purchase_main'>
-    <div class='title'>検索結果</div>
-
-    <%= render partial: "shared/search-result-customer", collection: @customer, as: "customer_record" %>
-
 <% end %>
 
-  <%= render partial: "shared/back-button" , locals: { back_link: input_customers_path } %>
+<div class='title'>検索結果</div>
+
+<% if @customer == nil %>
+  <div class="nil_message">
+    該当するデータはありませんでした。検索をやり直してください。
+  </div>
+<% elsif params[:column] == "id" %>
+  <%= render partial: "shared/search-result-customer", locals: {customer_record: @customer} %>
+<% else %>
+  <%= render partial: "shared/search-result-customer", collection: @customer, as: "customer_record" %>
+<% end %>
+
+  <%= render partial: "shared/back-button" , locals: { back_link: input_customers_path(params[:format]) } %>
 
 </body>

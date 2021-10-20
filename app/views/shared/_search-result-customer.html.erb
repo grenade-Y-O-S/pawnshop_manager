@@ -39,7 +39,7 @@
         生年月日
       </div>
       <div class='result_data'>
-        <%= customer_record.birth_date %>
+        <%= customer_record.birth_date.strftime("%Y年%m月%d日") %>
       </div>
     </div>
     <div class='customer_data_line'>

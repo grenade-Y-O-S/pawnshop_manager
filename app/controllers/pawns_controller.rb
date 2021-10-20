@@ -7,7 +7,6 @@ class PawnsController < ApplicationController
   end
 
   def new
-    redirect_to root_path if params[:format] == nil
     @pawn = Pawn.new
   end
 
