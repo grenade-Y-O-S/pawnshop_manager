@@ -13,6 +13,8 @@ Rails.application.routes.draw do
       collection do
         get 'result'
         get 'return_input'
+        get 'return_search'
+        get 'return_edit'
       end
     end
 

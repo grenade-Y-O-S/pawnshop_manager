@@ -1,5 +1,6 @@
-<body class='interest_main'>
-  <div class='title'>検索結果</div>
+<body class='return_top'>
+  <div class='title'>質返還・検索結果</div>
+
   <% if @pawns == nil %>
     <div class="nil_message">
       該当するデータはありませんでした。検索をやり直してください。
@@ -8,5 +9,5 @@
     <%= render partial: "shared/search-result-interest", collection: @pawns, as: "pawn" %>
   <% end %>
 
-  <%= render partial: "shared/back-button" , locals: { back_link: interests_path } %>
+  <%= render partial: "shared/back-button" , locals: { back_link: return_input_pawns_path } %>
 </body>
