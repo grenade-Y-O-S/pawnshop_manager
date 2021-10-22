@@ -9,12 +9,13 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :pawns, only: [:index, :new, :create] do
+    resources :pawns, only: [:index, :new, :create, :update] do
       collection do
         get 'result'
-        get 'return_input'
-        get 'return_search'
-        get 'return_edit'
+        get 'status_input'
+        get 'status_search'
+        get 'status_edit'
+        get 'status_result'
       end
     end
 

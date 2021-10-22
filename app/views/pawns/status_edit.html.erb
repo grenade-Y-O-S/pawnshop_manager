@@ -1,0 +1,27 @@
+<% if params[:process] == "return" %>
+  <body class='return_top'>
+    <div class='title'>質返還</div>
+      <%= render partial: "shared/display-pawn", locals: { pawn: @pawn, customer: @customer  } %>
+      <div>
+        上記の質取引を返還済に変更します。
+      </div>
+      <%= form_with model: @pawn, url: pawn_path(@pawn.id), method: :patch, local: true do |f| %>
+        <%= f.hidden_field :item_status, value: 1 %>
+        <%= f.submit "変更" ,class:"register-btn", data: { confirm: '返還処理してしていいですか?' } %>
+      <% end %>
+    </div>
+<% elsif params[:process] == "forfeit" %>
+  <body class='return_top'>
+    <div class='title'>質流れ</div>
+      <%= render partial: "shared/display-pawn", locals: { pawn: @pawn, customer: @customer  } %>
+      <div>
+        上記の質取引を質流れ処理します。
+      </div>
+      <%= form_with model: @pawn, url: pawn_path(@pawn.id), method: :patch, local: true do |f| %>
+        <%= f.hidden_field :item_status, value: 2 %>
+        <%= f.submit "変更" ,class:"register-btn", data: { confirm: '返還処理してしていいですか?' } %>
+      <% end %>
+    </div>
+<% end %>
+  <%= render partial: "shared/back-button" , locals: { back_link: status_input_pawns_path } %>
+</body>

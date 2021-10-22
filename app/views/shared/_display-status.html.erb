@@ -1,0 +1,33 @@
+<div class='pawn_result_main'>
+  <div class='data_back'>
+    <div class='customer_data_line'>
+      <div class='display_pawn_category'>
+        お客様氏名
+      </div>
+      <div class='flex_left result_data'>
+        <div class='first_name_column'>
+          <%= customer.last_name %>
+        </div>
+        <div>
+          <%= customer.first_name %>
+        </div>
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='result_category'>
+        品物名
+      </div>
+      <div class='result_data'>
+        <%= pawn.item_name %>
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='result_category'>
+        金額
+      </div>
+      <div class='result_data'>
+        <%= pawn.item_price.to_s(:delimited) %>円
+      </div>
+    </div>
+  </div>
+</div>

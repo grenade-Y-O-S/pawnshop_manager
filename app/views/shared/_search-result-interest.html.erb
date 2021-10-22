@@ -81,7 +81,13 @@
         </div>
       <% end %>
     <% elsif params[:format] == "return" %>
-      <%= link_to return_edit_pawns_path(pawn[:id]), data: { confirm: 'このお客様でよろしいですか?' } do %>
+      <%= link_to status_edit_pawns_path(pawn[:id], process: "return"), data: { confirm: 'このお客様でよろしいですか?' } do %>
+        <div class='choise_btn'>
+          選択
+        </div>
+      <% end %>
+    <% elsif params[:format] == "forfeit"  %>
+      <%= link_to status_edit_pawns_path(pawn[:id], process: "forfeit"), data: { confirm: 'このお客様でよろしいですか?' } do %>
         <div class='choise_btn'>
           選択
         </div>
