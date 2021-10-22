@@ -22,7 +22,6 @@ class PawnsController < ApplicationController
   def update
     redirect_to root_path if params[:id] == nil
     pawn = Pawn.find(params[:id])
-    binding.pry
     pawn.update(pawn_status_params)
     redirect_to status_result_pawns_path(pawn.id)
   end

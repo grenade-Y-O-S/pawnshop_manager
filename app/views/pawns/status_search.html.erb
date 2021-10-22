@@ -1,6 +1,10 @@
+<% if params[:format] == "return" %>
 <body class='return_top'>
   <div class='title'>質返還・検索結果</div>
-
+<% elsif params[:format] == "forfeit" %>
+<body class='forfeit_top'>
+  <div class='title'>質流れ・検索結果</div>
+<% end %>
   <% if @pawns == nil %>
     <div class="nil_message">
       該当するデータはありませんでした。検索をやり直してください。
@@ -9,5 +13,5 @@
     <%= render partial: "shared/search-result-interest", collection: @pawns, as: "pawn" %>
   <% end %>
 
-  <%= render partial: "shared/back-button" , locals: { back_link: status_input_pawns_path } %>
+  <%= render partial: "shared/back-button" , locals: { back_link: status_input_pawns_path(params[:format]) } %>
 </body>
