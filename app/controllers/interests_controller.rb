@@ -28,7 +28,7 @@ class InterestsController < ApplicationController
   def search
     @column = params[:column]
     word = params[:word]
-    @pawns = SearchPawnsService.search_pawn_total_data(@column, word)
+    @pawns = SearchPawnsService.search_pawn_total_data(@column, word, 0)
   end
 
 

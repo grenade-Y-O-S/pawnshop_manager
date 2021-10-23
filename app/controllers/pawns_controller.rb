@@ -2,6 +2,7 @@ class PawnsController < ApplicationController
   before_action :set_customer, only: [:new, :create]
   before_action :set_pawn_format, only: [:result, :status_edit, :status_result]
   before_action :move_to_index, except: [:index, :status_input, :status_search, :update]
+  before_action :set_customer_pid, only: [:result, :status_edit, :status_result]
 
   def index
   end
@@ -27,7 +28,7 @@ class PawnsController < ApplicationController
   end
 
   def result
-    @customer = Customer.find(@pawn.customer_id)
+
   end
 
   def status_input
@@ -36,11 +37,11 @@ class PawnsController < ApplicationController
   def status_search
     @column = params[:column]
     word = params[:word]
-    @pawns = SearchPawnsService.search_pawn_total_data(@column, word)
+    @pawns = SearchPawnsService.search_pawn_total_data(@column, word, 0)
   end
 
   def status_edit
-    @customer = Customer.find(@pawn.customer_id)
+
   end
 
   def status_result
@@ -54,6 +55,10 @@ private
 
   def set_pawn_format
     @pawn = Pawn.find(params[:format])
+  end
+
+  def set_customer_pid
+    @customer = Customer.find(@pawn.customer_id)
   end
 
   def move_to_index
