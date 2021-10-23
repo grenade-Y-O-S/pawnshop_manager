@@ -1,0 +1,17 @@
+.return_top{
+  background-color: rgb(255, 255, 133);
+}
+
+.process_message{
+  text-align: center;
+  margin: 10px;
+}
+
+.status_hidden_form{
+  display: flex;
+  justify-content: center;
+}
+
+.forfeit_top{
+  background-color: lightsteelblue;
+}

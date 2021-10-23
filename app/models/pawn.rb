@@ -8,4 +8,16 @@ class Pawn < ApplicationRecord
     validates :item_detail
     validates :item_status
   end
+
+  def self.search_pawn_status(column, word, status)
+    return Pawn.find_by("#{column} LIKE? and item_status = ?","#{word}%", status)
+  end
+
+  def self.where_pawn_status(column, word, status)
+    return Pawn.where("#{column} LIKE? and item_status = ?","#{word}%", status)
+  end
+
+  def self.check_pawn_status(column, word, status)
+    return Pawn.where("#{column} LIKE? and item_status = ?","#{word}%", status).exists?
+  end
 end

@@ -1,0 +1,12 @@
+<% if params[:item_status] == 1 %>
+  <body class='return_top'>
+<% else params[:item_status] == 2 %>
+  <body class='forfeit_top'>
+<% end %>
+  <div class='title'>処理が完了しました</div>
+
+  <%= render partial: "shared/display-status" , locals: { customer: @customer, pawn: @pawn } %>
+
+  <%= render partial: "shared/toppage_button" %>
+
+</body>

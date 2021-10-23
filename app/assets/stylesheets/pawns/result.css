@@ -3,7 +3,7 @@
   justify-content: center;
   font-size: 16px;
   color: white;
-  margin-top: 30px;
+  margin: 30px 10px;
 }
 
 .display_pawn_category{
@@ -38,4 +38,9 @@
 
 .result_category, .result_data, .box_title, .display_pawn_category{
   padding-left: 5px;
+}
+
+.status_result_data{
+  border: 1px white solid;
+  width: 150px;
 }

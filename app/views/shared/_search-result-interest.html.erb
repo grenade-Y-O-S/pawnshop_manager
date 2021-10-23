@@ -74,10 +74,24 @@
     </div>
   </div>
   <div class='interest_search_choise_box white_border data_back'>
-    <%= link_to new_interest_path(pawn[:id]), data: { confirm: 'このお客様でよろしいですか?' } do %>
-      <div class='choise_btn'>
-        選択
-      </div>
+    <% if params[:format] == "interest" %>
+      <%= link_to new_interest_path(pawn[:id]), data: { confirm: 'このお客様でよろしいですか?' } do %>
+        <div class='choise_btn'>
+          選択
+        </div>
+      <% end %>
+    <% elsif params[:format] == "return" %>
+      <%= link_to status_edit_pawns_path(pawn[:id], process: "return"), data: { confirm: 'このお客様でよろしいですか?' } do %>
+        <div class='choise_btn'>
+          選択
+        </div>
+      <% end %>
+    <% elsif params[:format] == "forfeit"  %>
+      <%= link_to status_edit_pawns_path(pawn[:id], process: "forfeit"), data: { confirm: 'このお客様でよろしいですか?' } do %>
+        <div class='choise_btn'>
+          選択
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
