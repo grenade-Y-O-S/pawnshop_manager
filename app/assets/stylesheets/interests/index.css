@@ -4,13 +4,13 @@
 
 .interest_result_main{
   color: white;
-  width: 250px;
-  margin: 30px 0px 30px calc(50vw - 125px);
+  width: 300px;
+  margin: 30px 0px 30px calc(50vw - 150px);
 }
 
 .interest_result_category{
   border: 1px white solid;
-  width: 100px;
+  width: 150px;
   padding-left: 5px;
 }
 

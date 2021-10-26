@@ -5,18 +5,26 @@
   <div class='interest_result_main'>
     <div class='customer_data_line'>
       <div class='interest_result_category'>
-        累計利息
-      </div>
-      <div class='interest_result_data'>
-        <%= Interest.total_interest(@pawn.id) %>回
-      </div>
-    </div>
-    <div class='customer_data_line'>
-      <div class='interest_result_category'>
         入質日
       </div>
       <div class='interest_result_data'>
         <%= @pawn.created_at.strftime("%Y年%m月%d日") %>
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='interest_result_category'>
+        経過月数
+      </div>
+      <div class='interest_result_data'>
+        <%= interests_counter(@pawn.id) %>ヶ月
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='interest_result_category'>
+        支払済利息
+      </div>
+      <div class='interest_result_data'>
+        <%= Interest.total_interest(@pawn.id) %>回
       </div>
     </div>
     <div class='customer_data_line'>
@@ -29,14 +37,30 @@
     </div>
     <div class='customer_data_line'>
       <div class='interest_result_category'>
-        利息金額
+        利息金額(1回)
       </div>
       <div class='interest_result_data'>
-        <%= interest_calculator(@pawn.item_price) %>円
+        <%= interest_calculator(@pawn.item_price).to_s(:delimited) %>円
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='interest_result_category'>
+        必要支払い回数
+      </div>
+      <div class='interest_result_data'>
+        <%= pay_number(@pawn.id) %>回
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='interest_result_category'>
+        必要支払い金額
+      </div>
+      <div class='interest_result_data'>
+        <%= (interest_calculator(@pawn.item_price) * pay_number(@pawn.id)).to_s(:delimited) %>円
       </div>
     </div>
   </div>
   <%= render partial: "shared/interest-form", locals: { process: interests_path(@pawn.id) } %>
-  <%= render partial: "shared/back-button" , locals: { back_link: input_customers_path(params[:format]) } %>
+  <%= render partial: "shared/back-to-search-button" , locals: { search_link: interests_path } %>
 </body>
 

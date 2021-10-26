@@ -11,3 +11,8 @@
   margin-top: 10px;
   padding-left: 40px;
 }
+
+.form_field_flex{
+  display: flex;
+  justify-content: center;
+}
