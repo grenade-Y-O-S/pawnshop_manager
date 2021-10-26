@@ -33,4 +33,5 @@ Rails.application.routes.draw do
     end
 
     resources :searchs, only: [:index]
+  end
 end
