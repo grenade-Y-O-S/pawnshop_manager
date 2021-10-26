@@ -48,7 +48,7 @@
         必要支払い回数
       </div>
       <div class='interest_result_data'>
-        <%= pay_number(@pawn.id) %>回
+        <%= pay_number(@pawn.id, "interest") %>回
       </div>
     </div>
     <div class='customer_data_line'>
@@ -56,7 +56,7 @@
         必要支払い金額
       </div>
       <div class='interest_result_data'>
-        <%= (interest_calculator(@pawn.item_price) * pay_number(@pawn.id)).to_s(:delimited) %>円
+        <%= (interest_calculator(@pawn.item_price) * pay_number(@pawn.id, "interest")).to_s(:delimited) %>円
       </div>
     </div>
   </div>

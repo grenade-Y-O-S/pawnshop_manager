@@ -30,10 +30,13 @@ module InterestsHelper
     return months
   end
 
-  def pay_number(pawn_id)
+  def pay_number(pawn_id, situation)
     months = interests_counter(pawn_id)
     interests_number = Interest.total_interest(pawn_id)
     pay_number = months - interests_number
+    if situation == "interest"
+      pay_number -= 3
+    end
     if pay_number < 0
       pay_number = 0
     end
