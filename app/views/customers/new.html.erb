@@ -4,7 +4,7 @@
       お客様情報を登録してください
     </div>
 
-    <%= render partial: "shared/customer-form", locals: { customer: @customer, process: "pawn" } %>
+    <%= render partial: "shared/customer-form", locals: { customer: @customer, url: customers_path(pawn) } %>
 
     <%= render partial: "shared/back-button" , locals: { back_link: pawns_path } %>
   </body>
@@ -15,7 +15,7 @@
       お客様情報を登録してください
     </div>
 
-    <%= render partial: "shared/customer-form" , locals: { customer: @customer, process: "purchase" } %>
+    <%= render partial: "shared/customer-form" , locals: { customer: @customer, url: customers_path(purchase) } %>
 
     <%= render partial: "shared/back-button", locals: { back_link: purchases_path } %>
   </body>

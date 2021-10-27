@@ -4,7 +4,7 @@
       お客様情報検索
     </div>
 
-    <%= render partial: "shared/search-customer", locals: { process: "pawn" } %>
+    <%= render partial: "shared/search-customer", locals: { url: search_customers_path(pawn) } %>
 
     <%= render partial: "shared/back-button" , locals: { back_link: pawns_path } %>
 
@@ -16,7 +16,7 @@
       お客様情報検索
     </div>
 
-    <%= render partial: "shared/search-customer", locals: { process: "purchase" } %>
+    <%= render partial: "shared/search-customer", locals: { url: search_customers_path(purchase) } %>
 
     <%= render partial: "shared/back-button" , locals: { back_link: purchases_path } %>
 

@@ -1,0 +1,5 @@
+<body class='main'>
+<div class="title">お客様情報検索結果</div>
+  <%= render partial: "shared/search-result-customer", collection: @customer, as: "customer_record" %>
+  <%= render partial: "shared/back-button" , locals: { back_link: input_customer_searchs_path } %>
+</body>

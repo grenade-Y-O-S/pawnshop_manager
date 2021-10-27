@@ -1,0 +1,8 @@
+<body class='main'>
+  <div class='title-contents'>
+    <div class='title'>
+      お客様情報編集
+    </div>
+  </div>
+  <%= render partial: "shared/customer-form", locals: { customer: @customer, url: customer_path(@customer.id) } %>
+</body>

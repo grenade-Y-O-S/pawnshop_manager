@@ -64,6 +64,12 @@
           選択
         </div>
       <% end %>
+    <% elsif params[:format] == "edit" %>
+      <%= link_to edit_customer_path(customer_record.id), data: { confirm: 'このお客様でよろしいですか?' } do %>
+        <div class='choise_btn'>
+          編集
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

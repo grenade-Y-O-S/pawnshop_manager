@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'customers#index'
 
   Rails.application.routes.draw do
-    resources :customers, only: [:index, :new, :create] do
+    resources :customers, only: [:index, :new, :create, :show, :edit, :update] do
       collection do
         get 'input'
         get 'search'
@@ -32,6 +32,11 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :searchs, only: [:index]
+    resources :searchs, only: [:index] do
+      collection do
+        get 'input_customer'
+        get 'result_customer'
+      end
+    end
   end
 end
