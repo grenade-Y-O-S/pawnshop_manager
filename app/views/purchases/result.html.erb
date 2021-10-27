@@ -5,11 +5,5 @@
 
   <%= render partial: "shared/display-purchase" , locals: { customer: @customer, purchase: @purchase } %>
 
-  <div class='index_link'>
-    <%= link_to root_path do %>
-      <div class='buttons pawn_button'>
-        トップへ戻る
-      </div>
-    <% end %>
-  </div>
+  <%= render partial: "shared/toppage_button" %>
 </body>

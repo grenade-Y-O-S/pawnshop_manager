@@ -1,0 +1,76 @@
+<body class='main'>
+  <div class='title-contents'>
+    <div class='title'>
+      お客様情報を編集しました
+    </div>
+  </div>
+  <div class='search_result'>
+    <div class='customer_data_line'>
+      <div class='result_category'>
+        お客様氏名
+      </div>
+      <div class='flex_left result_data'>
+        <div class='first_name_column'>
+          <%= @customer.last_name %>
+        </div>
+        <div>
+          <%= @customer.first_name %>
+        </div>
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='result_category'>
+        (カタカナ)
+      </div>
+      <div class='flex_left result_data'>
+        <div class='first_name_column'>
+          <%= @customer.last_name_kana %>
+        </div>
+        <div>
+          <%= @customer.first_name_kana %>
+        </div>
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='result_category'>
+        住所
+      </div>
+      <div class='result_data'>
+        <%= @customer.address %>
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='result_category'>
+        生年月日
+      </div>
+      <div class='result_data'>
+        <%= @customer.birth_date.strftime("%Y年%m月%d日") %>
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='result_category'>
+        電話番号
+      </div>
+      <div class='result_data'>
+        <%= @customer.phone_number %>
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='result_category'>
+        職業
+      </div>
+      <div class='result_data'>
+        <%= @customer.job %>
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='result_category'>
+        備考
+      </div>
+      <div class='result_data'>
+        <%= @customer.remarks %>
+      </div>
+    </div>
+  </div>
+  <%= render partial: "shared/three-back-buttons", locals: { back_link: input_customer_searchs_path, page_name: "お客様情報検索" } %>
+</body>

@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
-  before_action :set_customer, only: [:edit, :update]
+  before_action :set_customer_id, only: [:edit, :update]
+  before_action :set_customer, only: [:show, :edit_result]
 
   def index
   end
@@ -25,7 +26,6 @@ class CustomersController < ApplicationController
   end
 
   def show
-    @customer = Customer.find(params[:format])
   end
 
   def edit
@@ -33,7 +33,7 @@ class CustomersController < ApplicationController
 
   def update
     if @customer.update(customer_params)
-      redirect_to root_path
+      redirect_to edit_result_customers_path(@customer.id)
     else
       render action: :edit
     end
@@ -45,8 +45,15 @@ class CustomersController < ApplicationController
     @customer = SearchCustomersService.search_customer_data(@column, word)
   end
 
+  def edit_result
+  end
+
 private
   def set_customer
+    @customer = Customer.find(params[:format])
+  end
+
+  def set_customer_id
     @customer = Customer.find(params[:id])
   end
 

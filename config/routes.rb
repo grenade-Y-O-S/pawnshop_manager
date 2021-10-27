@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       collection do
         get 'input'
         get 'search'
+        get 'edit_result'
       end
     end
 

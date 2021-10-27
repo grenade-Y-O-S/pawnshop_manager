@@ -16,6 +16,7 @@ a {
 .button_lines{
   display: flex;
   justify-content: center;
+  margin-top: 30px;
 }
 
 .buttons{
