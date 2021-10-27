@@ -1,0 +1,11 @@
+<body class='main'>
+  <div class="title">質情報検索結果</div>
+  <% if @pawns == nil %>
+    <div class="nil_message">
+      該当するデータはありませんでした。検索をやり直してください。
+    </div>
+  <% else %>
+    <%= render partial: "shared/search-result-pawn", collection: @pawns, as: "pawn" %>
+  <% end %>
+  <%= render partial: "shared/back-button" , locals: { back_link: input_customer_searchs_path } %>
+</body>

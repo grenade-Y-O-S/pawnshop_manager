@@ -1,0 +1,9 @@
+<body class='main'>
+  <div class='title'>
+    質情報編集
+  </div>
+
+  <%= render partial: "shared/pawn-form", locals: { url: pawn_path(@customer.id, process: "edit"), method: :patch } %>
+
+  <%= render partial: "shared/toppage_button" %>
+</body>

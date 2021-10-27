@@ -1,0 +1,59 @@
+<div class='pawn_result_main'>
+  <div class='interest_search_data_box'>
+    <div class='customer_data_line'>
+      <div class='interest_category'>
+        質番号
+      </div>
+      <div class='interest_search_result_data'>
+        <%= pawn[:id] %>
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='interest_category'>
+        お客様氏名
+      </div>
+      <div class='interest_search_result_data'>
+        <%= pawn[:name] %>
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='interest_category'>
+        品物名
+      </div>
+      <div class='interest_search_result_data'>
+        <%= pawn[:item_name] %>
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='interest_category'>
+        金額
+      </div>
+      <div class='interest_search_result_data'>
+        <%= pawn[:price].to_s(:delimited) %>円
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='interest_category'>
+        備考
+      </div>
+      <div class='interest_search_result_data'>
+        <%= pawn[:remarks] %>
+      </div>
+    </div>
+    <div class='customer_data_line'>
+      <div class='interest_category'>
+        入質日
+      </div>
+      <div class='interest_search_result_data'>
+        <%= pawn[:date] %>
+      </div>
+    </div>
+  </div>
+  <div class='interest_search_choise_box white_border data_back'>
+    <%= link_to edit_pawn_path(pawn[:id]), data: { confirm: 'このデータを編集してよろしいですか?' } do %>
+      <div class='choise_btn'>
+        編集
+      </div>
+    <% end %>
+  </div>
+</div>

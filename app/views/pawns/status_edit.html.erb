@@ -7,11 +7,11 @@
       お客様情報
     </div>
     <div>
-      <div class='customer_data_line'>
-        <div class='display_pawn_category'>
+      <div class='status_edit_data_line'>
+        <div class='display_status_edit_category'>
           氏名
         </div>
-        <div class='flex_left result_data'>
+        <div class='flex_left status_edit_data'>
           <div class='first_name_column'>
             <%= @customer.last_name %>
           </div>
@@ -20,11 +20,11 @@
           </div>
         </div>
       </div>
-      <div class='customer_data_line'>
-        <div class='display_pawn_category'>
+      <div class='status_edit_data_line'>
+        <div class='display_status_edit_category'>
           (カタカナ)
         </div>
-        <div class='flex_left result_data'>
+        <div class='flex_left status_edit_data'>
           <div class='first_name_column'>
             <%= @customer.last_name_kana %>
           </div>
@@ -33,19 +33,19 @@
           </div>
         </div>
       </div>
-      <div class='customer_data_line'>
-        <div class='display_pawn_category'>
+      <div class='status_edit_data_line'>
+        <div class='display_status_edit_category'>
           住所
         </div>
-        <div class='interest_result_data'>
+        <div class='status_edit_data'>
           <%= @customer.address %>
         </div>
       </div>
-      <div class='customer_data_line'>
-        <div class='display_pawn_category'>
+      <div class='status_edit_data_line'>
+        <div class='display_status_edit_category'>
           備考
         </div>
-        <div class='interest_result_data'>
+        <div class='status_edit_data'>
           <%= @customer.remarks %>
         </div>
       </div>
@@ -56,91 +56,91 @@
       品物情報
     </div>
     <div class='data_back'>
-      <div class='customer_data_line'>
-        <div class='interest_result_category'>
+      <div class='status_edit_data_line'>
+        <div class='status_edit_item_category'>
           品物名
         </div>
-        <div class='interest_result_data'>
+        <div class='interest_status_edit_data'>
           <%= @pawn.item_name %>
         </div>
       </div>
-      <div class='customer_data_line'>
-        <div class='interest_result_category'>
+      <div class='status_edit_data_line'>
+        <div class='status_edit_item_category'>
           金額
         </div>
-        <div class='interest_result_data'>
+        <div class='interest_status_edit_data'>
           <%= @pawn.item_price.to_s(:delimited) %>円
         </div>
       </div>
-      <div class='customer_data_line'>
-        <div class='interest_result_category'>
+      <div class='status_edit_data_line'>
+        <div class='status_edit_item_category'>
           詳細
         </div>
-        <div class='interest_result_data'>
+        <div class='interest_status_edit_data'>
           <%= @pawn.item_detail %>
         </div>
       </div>
-      <div class='customer_data_line'>
-        <div class='interest_result_category'>
+      <div class='status_edit_data_line'>
+        <div class='status_edit_item_category'>
           備考
         </div>
-        <div class='interest_result_data'>
+        <div class='interest_status_edit_data'>
           <%= @pawn.item_remarks %>
         </div>
       </div>
-      <div class='customer_data_line'>
-        <div class='interest_result_category'>
+      <div class='status_edit_data_line'>
+        <div class='status_edit_item_category'>
           入質日
         </div>
-        <div class='interest_result_data'>
+        <div class='interest_status_edit_data'>
           <%= @pawn.created_at.strftime("%Y年%m月%d日") %>
         </div>
       </div>
-      <div class='customer_data_line'>
-        <div class='interest_result_category'>
+      <div class='status_edit_data_line'>
+        <div class='status_edit_item_category'>
           経過月数
         </div>
-        <div class='interest_result_data'>
+        <div class='interest_status_edit_data'>
           <%= interests_counter(@pawn.id) %>ヶ月
         </div>
       </div>
-      <div class='customer_data_line'>
-        <div class='interest_result_category'>
+      <div class='status_edit_data_line'>
+        <div class='status_edit_item_category'>
           支払済利息
         </div>
-        <div class='interest_result_data'>
+        <div class='interest_status_edit_data'>
           <%= Interest.total_interest(@pawn.id) %>回
         </div>
       </div>
-      <div class='customer_data_line'>
-        <div class='interest_result_category'>
+      <div class='status_edit_data_line'>
+        <div class='status_edit_item_category'>
           期限
         </div>
-        <div class='interest_result_data'>
+        <div class='interest_status_edit_data'>
           <%= pawn_timelimit(@pawn.id) %>
         </div>
       </div>
-      <div class='customer_data_line'>
-        <div class='interest_result_category'>
+      <div class='status_edit_data_line'>
+        <div class='status_edit_item_category'>
           利息金額(1回)
         </div>
-        <div class='interest_result_data'>
+        <div class='interest_status_edit_data'>
           <%= interest_calculator(@pawn.item_price).to_s(:delimited) %>円
         </div>
       </div>
-      <div class='customer_data_line'>
-        <div class='interest_result_category'>
+      <div class='status_edit_data_line'>
+        <div class='status_edit_item_category'>
           必要支払い回数
         </div>
-        <div class='interest_result_data'>
+        <div class='interest_status_edit_data'>
           <%= pay_number(@pawn.id, "return") %>回
         </div>
       </div>
-      <div class='customer_data_line'>
-        <div class='interest_result_category'>
+      <div class='status_edit_data_line'>
+        <div class='status_edit_item_category'>
           必要支払い金額
         </div>
-        <div class='interest_result_data'>
+        <div class='interest_status_edit_data'>
           <%= (interest_calculator(@pawn.item_price) * pay_number(@pawn.id, "return")).to_s(:delimited) %>円
         </div>
       </div>
@@ -151,7 +151,7 @@
       上記の質取引を返還済に変更します。
     </div>
     <div class='status_hidden_form'>
-      <%= form_with model: @pawn, url: pawn_path(@pawn.id), method: :patch, local: true do |f| %>
+      <%= form_with model: @pawn, url: pawn_path(@pawn.id, process: "return"), method: :patch, local: true do |f| %>
         <%= f.hidden_field :item_status, value: 1 %>
         <%= f.submit "変更" ,class:"status_register_btn", data: { confirm: '返還処理してしていいですか?' } %>
       <% end %>
@@ -164,7 +164,7 @@
       上記の質取引を質流れ処理します。
     </div>
     <div class='status_hidden_form'>
-      <%= form_with model: @pawn, url: pawn_path(@pawn.id), method: :patch, local: true do |f| %>
+      <%= form_with model: @pawn, url: pawn_path(@pawn.id, process: "forfeit"), method: :patch, local: true do |f| %>
         <%= f.hidden_field :item_status, value: 2 %>
         <%= f.submit "変更" ,class:"status_register_btn", data: { confirm: '質流れ処理してしていいですか?' } %>
       <% end %>

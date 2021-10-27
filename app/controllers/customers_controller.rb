@@ -25,9 +25,6 @@ class CustomersController < ApplicationController
   def input
   end
 
-  def show
-  end
-
   def edit
   end
 
