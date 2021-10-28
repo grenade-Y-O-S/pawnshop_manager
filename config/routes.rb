@@ -21,13 +21,13 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :purchases, only: [:index, :new, :create, :edit] do
+    resources :purchases, only: [:index, :new, :create, :edit, :update] do
       collection do
         get 'result'
       end
     end
 
-    resources :interests, only: [:index, :new, :create, :edit] do
+    resources :interests, only: [:index, :new, :create, :edit, :update] do
       collection do
         get 'search'
         get 'result'
