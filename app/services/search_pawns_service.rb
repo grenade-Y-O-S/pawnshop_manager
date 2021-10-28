@@ -44,9 +44,7 @@ class SearchPawnsService
 
   def self.get_pawns_data(customer, pawn)
     name = "#{customer[:last_name]} #{customer[:first_name]}"
-    @pawn = {id: pawn[:id], name: name, item_name: pawn[:item_name], price: pawn[:item_price], remarks: pawn[:remarks], total_interest: Interest.total_interest(pawn[:id]), date: pawn[:created_at].to_date.strftime("%Y年%m月%d日"), id: pawn[:id]}
+    @pawn = {id: pawn[:id], name: name, item_name: pawn[:item_name], price: pawn[:item_price], remarks: pawn[:remarks], total_interest: Interest.total_interest(pawn[:id]), date: pawn[:created_at].to_date.strftime("%Y年%m月%d日"), id: pawn[:id], status: pawn[:item_status]}
     return @pawn
   end
-
-
 end

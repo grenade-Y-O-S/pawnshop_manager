@@ -1,0 +1,90 @@
+<body class='main'>
+  <div class="title">質情報検索結果</div>
+    <% if @pawns == nil %>
+      <div class="nil_message">
+        該当するデータはありませんでした。検索をやり直してください。
+      </div>
+    <% else %>
+      <% @pawns.each do |pawn| %>
+        <div class='pawn_result_main'>
+          <div class='interest_search_data_box'>
+            <div class='customer_data_line'>
+              <div class='interest_category'>
+                質番号
+              </div>
+              <div class='interest_search_result_data'>
+                <%= pawn[:id] %>
+              </div>
+            </div>
+            <div class='customer_data_line'>
+              <div class='interest_category'>
+                状態
+              </div>
+              <% if pawn[:status] == 0 %>
+                <div class='interest_search_result_data'>
+                  入質中
+                </div>
+              <% elsif pawn[:status] == 1 %>
+                <div class='interest_search_result_data return_status'>
+                  返還済
+                </div>
+              <% elsif pawn[:status] == 2 %>
+                <div class='interest_search_result_data forfeit_status'>
+                  質流れ
+                </div>
+              <% end %>
+            </div>
+            <div class='customer_data_line'>
+              <div class='interest_category'>
+                お客様氏名
+              </div>
+              <div class='interest_search_result_data'>
+                <%= pawn[:name] %>
+              </div>
+            </div>
+            <div class='customer_data_line'>
+              <div class='interest_category'>
+                品物名
+              </div>
+              <div class='interest_search_result_data'>
+                <%= pawn[:item_name] %>
+              </div>
+            </div>
+            <div class='customer_data_line'>
+              <div class='interest_category'>
+                金額
+              </div>
+              <div class='interest_search_result_data'>
+                <%= pawn[:price].to_s(:delimited) %>円
+              </div>
+            </div>
+            <div class='customer_data_line'>
+              <div class='interest_category'>
+                備考
+              </div>
+              <div class='interest_search_result_data'>
+                <%= pawn[:remarks] %>
+              </div>
+            </div>
+            <div class='customer_data_line'>
+              <div class='interest_category'>
+                入質日
+              </div>
+              <div class='interest_search_result_data'>
+                <%= pawn[:date] %>
+              </div>
+            </div>
+            <div class='interest_search_choise_box white_border data_back'>
+              <%= link_to edit_pawn_path(pawn[:id]), data: { confirm: 'このデータを編集してよろしいですか?' } do %>
+                <div class='choise_btn'>
+                  編集
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    
+  <%= render partial: "shared/back-button" , locals: { back_link: input_pawn_searchs_path } %>
+</body>

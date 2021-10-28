@@ -1,0 +1,42 @@
+<body class='main'>
+  <div class='title-contents'>
+    <div class='title'>
+      データ検索
+    </div>
+    <div class="middle_message">
+      検索する項目を選択してください
+    </div>
+  </div>
+  <div class='first_line button_lines'>
+    <div class='first_line_button'>
+      <%= link_to input_customer_searchs_path do %>
+        <div class='buttons top_page_btn'>
+          お客様
+        </div>
+      <% end %>
+    </div>
+    <div class='first_line_button'>
+      <%= link_to input_pawn_searchs_path do %>
+        <div class='buttons top_page_btn'>
+          質取引
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class='second_line button_lines'>
+    <div class='first_line_button'>
+      <%= link_to input_interest_searchs_path do %>
+        <div class='buttons top_page_btn'>
+          利息
+        </div>
+      <% end %>
+    </div>
+    <div class='first_line_button'>
+      <%= link_to input_purchase_searchs_path do %>
+        <div class='buttons top_page_btn'>
+          買取
+        </div>
+      <% end %>
+    </div>
+  </div>
+</body>

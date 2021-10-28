@@ -3,7 +3,7 @@
     質情報を入力してください
   </div>
 
-  <%= render partial: "shared/pawn-form" %>
+  <%= render partial: "shared/pawn-form", locals: { url: pawns_path(@customer.id) } %>
 
   <%= render partial: "shared/toppage_button" %>
 </body>

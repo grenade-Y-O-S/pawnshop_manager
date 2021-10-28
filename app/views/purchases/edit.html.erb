@@ -1,0 +1,9 @@
+<body class='main'>
+  <div class='title'>
+    買取情報編集
+  </div>
+
+  <%= render partial: "shared/purchase-form", locals: { url: purchase_path(@purchase.id) } %>
+
+  <%= render partial: "shared/three-back-buttons", locals: { back_link: input_purchase_searchs_path, page_name: "買取検索" } %>
+</body>

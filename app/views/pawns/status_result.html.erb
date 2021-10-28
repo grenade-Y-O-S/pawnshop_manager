@@ -1,6 +1,6 @@
-<% if params[:item_status] == 1 %>
+<% if params[:process] == "return" %>
   <body class='return_top'>
-<% else params[:item_status] == 2 %>
+<% else params[:process] == "forfeit" %>
   <body class='forfeit_top'>
 <% end %>
   <div class='title'>処理が完了しました</div>

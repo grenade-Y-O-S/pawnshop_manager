@@ -1,0 +1,42 @@
+<body class='main'>
+  <div class='title'>
+    質情報を編集しました
+  </div>
+  <div class='search_result'>
+    <div class='data_back'>
+      <div class='customer_data_line'>
+        <div class='result_category'>
+          品物名
+        </div>
+        <div class='result_data'>
+          <%= @pawn.item_name %>
+        </div>
+      </div>
+      <div class='customer_data_line'>
+        <div class='result_category'>
+          金額
+        </div>
+        <div class='result_data'>
+          <%= @pawn.item_price.to_s(:delimited) %>円
+        </div>
+      </div>
+      <div class='customer_data_line'>
+        <div class='result_category'>
+          詳細
+        </div>
+        <div class='result_data'>
+          <%= @pawn.item_detail %>
+        </div>
+      </div>
+      <div class='customer_data_line'>
+        <div class='result_category'>
+          備考
+        </div>
+        <div class='result_data'>
+          <%= @pawn.item_remarks %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render partial: "shared/toppage_button" %>
+</body>

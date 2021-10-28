@@ -1,0 +1,63 @@
+<body class='main'>
+  <div class="title">質情報検索結果</div>
+  <% if @purchases == nil %>
+    <div class="nil_message">
+      該当するデータはありませんでした。検索をやり直してください。
+    </div>
+  <% else %>
+    <% @purchases.each do |purchase| %>
+      <div class='customer_search_result_main'>
+        <div class='data_box'>
+          <div class='customer_data_line'>
+            <div class='result_category'>
+              お客様氏名
+            </div>
+            <div class='result_data'>
+              <%= purchase[:name] %>
+            </div>
+          </div>
+          <div class='customer_data_line'>
+            <div class='result_category'>
+              品物名
+            </div>
+            <div class='result_data'>
+              <%= purchase[:item_name] %>
+            </div>
+          </div>
+          <div class='customer_data_line'>
+            <div class='result_category'>
+              金額
+            </div>
+            <div class='result_data'>
+              <%= purchase[:price] %>
+            </div>
+          </div>
+          <div class='customer_data_line'>
+            <div class='result_category'>
+              詳細
+            </div>
+            <div class='result_data'>
+              <%= purchase[:detail] %>
+            </div>
+          </div>
+          <div class='customer_data_line'>
+            <div class='result_category'>
+              買取日
+            </div>
+            <div class='result_data'>
+              <%= purchase[:date] %>
+            </div>
+          </div>
+        </div>
+        <div class='choise_box white_border'>
+          <%= link_to edit_purchase_path(purchase[:id]), data: { confirm: 'この買取データを編集しますか?' } do %>
+            <div class='choise_btn'>
+              編集
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  <%= render partial: "shared/back-button" , locals: { back_link: input_purchase_searchs_path } %>
+</body>

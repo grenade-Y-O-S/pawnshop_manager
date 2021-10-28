@@ -1,15 +1,11 @@
-<body class='purchase_main'>
-  <div class='title'>
-    買取情報を登録しました
-  </div>
-
+<% if params[:process] == "create" %>
+  <body class='purchase_main'>
+    <div class='title'>買取情報を登録しました</div>
+<% elsif params[:process] == "update" %>
+  <body class='main'>
+    <div class='title'>買取情報を編集しました</div>
+<% end %>
   <%= render partial: "shared/display-purchase" , locals: { customer: @customer, purchase: @purchase } %>
 
-  <div class='index_link'>
-    <%= link_to root_path do %>
-      <div class='buttons pawn_button'>
-        トップへ戻る
-      </div>
-    <% end %>
-  </div>
+  <%= render partial: "shared/toppage_button" %>
 </body>

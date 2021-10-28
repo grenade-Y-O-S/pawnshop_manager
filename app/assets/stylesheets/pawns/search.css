@@ -12,3 +12,34 @@
   display: flex;
   justify-content: space-around;
 }
+
+.status_edit_data_line{
+  display: flex;
+  justify-content: left;
+  border: 1px white solid;
+  background-color: black;
+}
+
+.display_status_edit_category{
+  width: 100px;
+  border: 1px white solid;
+  padding-left: 5px;
+}
+
+.status_edit_data{
+  border: 1px white solid;
+  width: 200px;
+  padding-left: 5px;
+}
+
+.interest_status_edit_data{
+  border: 1px white solid;
+  width: 170px;
+  padding-left: 5px;
+}
+
+.status_edit_item_category{
+  border: 1px white solid;
+  width: 130px;
+  padding-left: 5px;
+}

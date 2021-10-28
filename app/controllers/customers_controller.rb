@@ -1,4 +1,7 @@
 class CustomersController < ApplicationController
+  before_action :set_customer_id, only: [:edit, :update]
+  before_action :set_customer, only: [:show, :edit_result]
+
   def index
   end
 
@@ -22,28 +25,34 @@ class CustomersController < ApplicationController
   def input
   end
 
-  def search
-    @column = params[:column]
-    word = params[:word]
-    if word == ''
-      @customer = nil
-    elsif @column == "id"
-      if Pawn.exists?(word)
-        @pawn = Pawn.find(word)
-        @customer = Customer.find(@pawn.customer_id)
-      else
-        @customer = nil
-      end
+  def edit
+  end
+
+  def update
+    if @customer.update(customer_params)
+      redirect_to edit_result_customers_path(@customer.id)
     else
-      if Customer.search(@column, word).exists?
-        @customer = Customer.search(@column, word)
-      else
-        @customer = nil
-      end
+      render action: :edit
     end
   end
 
+  def search
+    @column = params[:column]
+    word = params[:word]
+    @customer = SearchCustomersService.search_customer_data(@column, word)
+  end
+
+  def edit_result
+  end
+
 private
+  def set_customer
+    @customer = Customer.find(params[:format])
+  end
+
+  def set_customer_id
+    @customer = Customer.find(params[:id])
+  end
 
   def customer_params
     params.require(:customer).permit(:last_name, :first_name, :last_name_kana, :first_name_kana,

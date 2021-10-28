@@ -6,7 +6,7 @@ class Interest < ApplicationRecord
   end
 
   def self.search(column, word)
-    return Customer.where("#{column} LIKE?","#{word}%").order("created_at DESC")
+    return Interest.where("#{column} LIKE?","#{word}%").order("created_at DESC")
   end
 
   def self.search_pawn_data(word)

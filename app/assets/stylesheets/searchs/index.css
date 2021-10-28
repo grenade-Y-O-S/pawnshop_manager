@@ -1,0 +1,31 @@
+.middle_message{
+  text-align: center;
+  font-size: 24px;
+}
+
+.search_result{
+  color: white;
+  margin: 30px 0px 0px calc(50vw - 200px);
+  width: 400px;
+}
+
+.return_status{
+  background-color: yellow;
+  color: black;
+}
+
+.forfeit_status{
+  background-color: white;
+  color: black;
+}
+
+.interest_search_result_main{
+  color: white;
+  width: 500px;
+  margin: 30px 0px 30px calc(50vw - 250px);
+}
+
+.interest_search_result_category{
+  padding-left: 5px;
+  width: 120px;
+}

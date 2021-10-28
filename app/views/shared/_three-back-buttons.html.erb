@@ -1,0 +1,23 @@
+<div class='button_lines'>
+  <div class='new_customer_btn'>
+    <%= link_to back_link, data: { confirm: '前のページに戻っていいですか?' } do %>
+      <div class='buttons'>
+        <%= page_name %>へ戻る
+      </div>
+    <% end %>
+  </div>
+  <div class='new_customer_btn'>
+    <%= link_to searchs_path, data: { confirm: '検索トップに戻っていいですか?' } do %>
+      <div class='buttons'>
+        検索トップへ戻る
+      </div>
+    <% end %>
+  </div>
+  <div class='new_customer_btn'>
+    <%= link_to root_path, data: { confirm: 'トップページに戻っていいですか?' } do %>
+      <div class='buttons'>
+        総合トップへ戻る
+      </div>
+    <% end %>
+  </div>
+</div>

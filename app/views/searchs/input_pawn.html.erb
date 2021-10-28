@@ -1,0 +1,10 @@
+<body class='main'>
+  <div class='title-contents'>
+    <div class='title'>
+      質データ検索
+    </div>
+  </div>
+    <%= render partial: "shared/search-pawn", locals: { process: result_pawn_searchs_path } %>
+
+    <%= render partial: "shared/back-button" , locals: { back_link: searchs_path } %>
+</body>

@@ -1,0 +1,9 @@
+<body class='main'>
+  <div class='title-contents'>
+    <div class='title'>
+      お客様情報編集
+    </div>
+  </div>
+  <%= render partial: "shared/customer-form", locals: { customer: @customer, url: customer_path(@customer.id) } %>
+  <%= render partial: "shared/three-back-buttons", locals: { back_link: input_customer_searchs_path, page_name: "お客様情報検索" } %>
+</body>

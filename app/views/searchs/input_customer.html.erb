@@ -1,0 +1,13 @@
+<body class='main'>
+  <div class='title-contents'>
+    <div class='title'>
+      お客様データ検索
+    </div>
+    <div class="middle_message">
+      検索する項目を選択してください
+    </div>
+  </div>
+    <%= render partial: "shared/search-customer", locals: { url: result_customer_searchs_path("edit") } %>
+
+    <%= render partial: "shared/back-button" , locals: { back_link: searchs_path } %>
+</body>
