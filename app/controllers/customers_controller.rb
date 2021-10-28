@@ -1,4 +1,6 @@
 class CustomersController < ApplicationController
+  before_action :move_to_index, except: [:index, :new, :input, :search]
+  before_action :move_to_index_id, only: [:edit, :update]
   before_action :set_customer_id, only: [:edit, :update]
   before_action :set_customer, only: [:show, :edit_result]
 
@@ -46,6 +48,14 @@ class CustomersController < ApplicationController
   end
 
 private
+  def move_to_index
+    redirect_to root_path if params[:format] == nil
+  end
+
+  def move_to_index_id
+    redirect_to root_path if params[:id] == nil
+  end
+
   def set_customer
     @customer = Customer.find(params[:format])
   end
