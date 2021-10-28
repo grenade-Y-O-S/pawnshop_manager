@@ -1,0 +1,79 @@
+<body class='main'>
+<div class="title">利息情報検索結果</div>
+  <% if @interests == nil %>
+    <div class="nil_message">
+      該当するデータはありませんでした。検索をやり直してください。
+    </div>
+  <% else %>
+    <% @interests.each do |interest| %>
+      <div class='interest_search_result_main form_field_flex'>
+        <div class='interest_search_data_box'>
+          <div class='customer_data_line'>
+            <div class='interest_search_result_category'>
+              お客様氏名
+            </div>
+            <div class='interest_search_result_data'>
+              <%= interest[:name] %>
+            </div>
+          </div>
+          <div class='customer_data_line'>
+            <div class='interest_search_result_category'>
+              品物名
+            </div>
+            <div class='interest_search_result_data'>
+              <%= interest[:item_name] %>
+            </div>
+          </div>
+          <div class='customer_data_line'>
+            <div class='interest_search_result_category'>
+              質取引金額            
+            </div>
+            <div class='interest_search_result_data'>
+              <%= interest[:price].to_s(:delimited) %>円
+            </div>
+          </div>
+          <div class='customer_data_line'>
+            <div class='interest_search_result_category'>
+              利息金額(1回)
+            </div>
+            <div class='interest_search_result_data'>
+              <%= interest_calculator(interest[:price]).to_s(:delimited) %>円
+            </div>
+          </div>
+          <div class='customer_data_line'>
+            <div class='interest_search_result_category'>
+              利息回数
+            </div>
+            <div class='interest_search_result_data'>
+              <%= interest[:number] %>
+            </div>
+          </div>
+          <div class='customer_data_line'>
+            <div class='interest_search_result_category'>
+              合計利息金額
+            </div>
+            <div class='interest_search_result_data'>
+              <%= (interest_calculator(interest[:price]) * interest[:number]).to_s(:delimited) %>円
+            </div>
+          </div>
+          <div class='customer_data_line'>
+            <div class='interest_search_result_category'>
+              利息取扱日
+            </div>
+            <div class='interest_search_result_data'>
+              <%= interest[:date] %>
+            </div>
+          </div>
+        </div>
+        <div class='interest_search_choise_box white_border data_back'>
+          <%= link_to edit_interest_path(interest[:id]), data: { confirm: 'このデータを編集してよろしいですか?' } do %>
+            <div class='choise_btn'>
+              編集
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  <%= render partial: "shared/back-button" , locals: { back_link: input_interest_searchs_path } %>
+</body>

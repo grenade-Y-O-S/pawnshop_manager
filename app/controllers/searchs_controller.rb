@@ -6,7 +6,7 @@ class SearchsController < ApplicationController
 
   end
 
-  def result_customer 
+  def result_customer
     @column = params[:column]
     word = params[:word]
     @customer = SearchCustomersService.search_customer_data(@column, word)
@@ -30,5 +30,15 @@ class SearchsController < ApplicationController
     @column = params[:column]
     word = params[:word]
     @purchases = SearchPurchasesService.search_purchase_total_data(@column, word)
+  end
+
+  def input_interest
+
+  end
+
+  def result_interest
+    @column = params[:column]
+    word = params[:word]
+    @interests = SearchInterestsService.search_interest_total_data(@column, word)
   end
 end
