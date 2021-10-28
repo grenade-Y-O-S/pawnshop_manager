@@ -21,13 +21,13 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :purchases, only: [:index, :new, :create] do
+    resources :purchases, only: [:index, :new, :create, :edit] do
       collection do
         get 'result'
       end
     end
 
-    resources :interests, only: [:index, :new, :create] do
+    resources :interests, only: [:index, :new, :create, :edit] do
       collection do
         get 'search'
         get 'result'
@@ -40,6 +40,10 @@ Rails.application.routes.draw do
         get 'result_customer'
         get 'input_pawn'
         get 'result_pawn'
+        get 'input_purchase'
+        get 'result_purchase'
+        get 'input_interest'
+        get 'result_interest'
       end
     end
   end

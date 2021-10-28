@@ -23,6 +23,14 @@ class PurchasesController < ApplicationController
     @customer = Customer.find(@purchase.customer_id)
   end
 
+  def edit
+
+  end
+
+  def update
+
+  end
+
   private
   def set_customer
     @customer = Customer.find(params[:format])

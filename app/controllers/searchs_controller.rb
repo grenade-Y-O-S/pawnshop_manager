@@ -21,4 +21,14 @@ class SearchsController < ApplicationController
     word = params[:word]
     @pawns = SearchPawnsService.search_pawn_total_data(@column, word, "free")
   end
+
+  def input_purchase
+
+  end
+
+  def result_purchase
+    @column = params[:column]
+    word = params[:word]
+    @purchases = SearchPurchasesService.search_purchase_total_data(@column, word)
+  end
 end
