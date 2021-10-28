@@ -1,2 +1,0 @@
-class DailyWorkCheck < ApplicationRecord
-end

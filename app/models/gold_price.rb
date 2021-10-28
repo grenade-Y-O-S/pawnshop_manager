@@ -1,2 +1,0 @@
-class GoldPrice < ApplicationRecord
-end

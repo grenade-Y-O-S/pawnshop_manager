@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_27_055429) do
+ActiveRecord::Schema.define(version: 2021_09_27_054746) do
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "last_name", null: false
@@ -22,26 +22,6 @@ ActiveRecord::Schema.define(version: 2021_09_27_055429) do
     t.string "phone_number", null: false
     t.string "job", null: false
     t.text "remarks"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "daily_work_checks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.time "message_time", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "gold_prices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "k18_price", null: false
-    t.integer "k14_price", null: false
-    t.integer "k24_price", null: false
-    t.integer "k18wg_price", null: false
-    t.integer "k14wg_price", null: false
-    t.integer "pt850_price", null: false
-    t.integer "pt900_price", null: false
-    t.integer "pt950_price", null: false
-    t.integer "pt1000_price", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
